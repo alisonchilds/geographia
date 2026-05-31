@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Dependencies / build output (also covered by web/.gitignore)
+node_modules
+dist
