@@ -21,6 +21,7 @@ export default function App() {
   const [panelData, setPanelData] = useState<PanelData | null>(null);
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
 
   const [countryNames, setCountryNames] = useState<string[]>([]);
   const centroidsRef = useRef<Record<string, [number, number]>>({});
@@ -99,11 +100,13 @@ export default function App() {
         position={position}
         onSelectCountry={selectCountry}
         onMoveEnd={setPosition}
+        onHoverChange={setHoveredCountry}
       />
 
       <MapOverlay
         countryNames={countryNames}
         curatedNames={CURATED_NAMES}
+        panelOpen={open}
         onSearchSelect={handleSearchSelect}
         onZoomIn={zoomIn}
         onZoomOut={zoomOut}
@@ -118,8 +121,8 @@ export default function App() {
         onClose={closePanel}
       />
 
-      {/* First-run hint */}
-      {!open && countryNames.length > 0 && (
+      {/* First-run hint — hidden while hovering a country so it never covers the label */}
+      {!open && !hoveredCountry && countryNames.length > 0 && (
         <div className="pointer-events-none absolute bottom-6 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink/80 px-4 py-2 text-sm text-white shadow-float">
           Click a country to explore its architecture
         </div>

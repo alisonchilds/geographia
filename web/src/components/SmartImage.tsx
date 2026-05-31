@@ -14,7 +14,7 @@ export default function SmartImage({ src, alt = '', className = '' }: SmartImage
   if (state === 'error') return null;
 
   return (
-    <div className={`relative overflow-hidden bg-neutral-200 ${className}`}>
+    <div className={`relative overflow-hidden bg-neutral-200 dark:bg-neutral-800 ${className}`}>
       {state === 'loading' && (
         <div className="absolute inset-0">
           <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 to-transparent" />

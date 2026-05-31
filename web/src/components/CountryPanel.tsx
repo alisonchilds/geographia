@@ -142,8 +142,8 @@ export default function CountryPanel({
   // On desktop the panel floats as a card that starts BELOW the brand/search
   // overlay, so those never cover the hero or the sticky sub-nav.
   const positionClass = isMobile
-    ? `inset-x-0 bottom-0 rounded-t-2xl ${expanded ? 'h-[88vh]' : 'h-[80vh]'}`
-    : `left-3 top-[84px] bottom-3 rounded-2xl ${expanded ? 'w-[min(860px,94vw)]' : 'w-[min(420px,90vw)]'}`;
+    ? `inset-x-3 bottom-3 rounded-2xl ${expanded ? 'h-[88vh]' : 'h-[80vh]'}`
+    : `left-3 top-[84px] bottom-3 rounded-2xl ${expanded ? 'w-[min(860px,94vw)]' : 'w-[min(420px,calc(100%-1.5rem))]'}`;
 
   return (
     <AnimatePresence>
@@ -155,12 +155,12 @@ export default function CountryPanel({
           exit="hidden"
           variants={variants}
           transition={{ type: 'spring', stiffness: 320, damping: 34 }}
-          className={`absolute z-30 flex flex-col overflow-hidden bg-white shadow-panel transition-[width,height] duration-300 ease-out ${positionClass}`}
+          className={`absolute z-30 flex flex-col overflow-hidden bg-white shadow-panel transition-[width,height] duration-300 ease-out dark:bg-neutral-900 ${positionClass}`}
         >
           {/* Mobile drag handle */}
           {isMobile && (
             <div className="flex justify-center pt-2">
-              <div className="h-1.5 w-10 rounded-full bg-neutral-300" />
+              <div className="h-1.5 w-10 rounded-full bg-neutral-300 dark:bg-neutral-600" />
             </div>
           )}
 
@@ -173,7 +173,7 @@ export default function CountryPanel({
                   onClick={() => setExpanded((e) => !e)}
                   aria-label={expanded ? 'Collapse panel' : 'Expand panel'}
                   title={expanded ? 'Collapse' : 'Expand'}
-                  className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white"
+                  className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-neutral-800/90 dark:text-neutral-100 dark:hover:bg-neutral-700"
                 >
                   {expanded ? (
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -188,7 +188,7 @@ export default function CountryPanel({
                 <button
                   onClick={onClose}
                   aria-label="Close"
-                  className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white"
+                  className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-neutral-800/90 dark:text-neutral-100 dark:hover:bg-neutral-700"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                     <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -225,8 +225,8 @@ export default function CountryPanel({
                 </header>
 
                 {/* Sub-header: source + wikipedia link */}
-                <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-2 text-xs">
-                  <span className="inline-flex items-center gap-1.5 text-neutral-500">
+                <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-2 text-xs dark:border-neutral-800">
+                  <span className="inline-flex items-center gap-1.5 text-neutral-500 dark:text-neutral-400">
                     <span
                       className={`h-2 w-2 rounded-full ${
                         data.source === 'curated' ? 'bg-emerald-500' : 'bg-sky-500'
@@ -238,7 +238,7 @@ export default function CountryPanel({
                     href={wikipediaPageUrl(data.wikipediaTitle)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-medium text-[#3366cc] hover:underline"
+                    className="font-medium text-[#3366cc] hover:underline dark:text-[#8ab4ff]"
                   >
                     View on Wikipedia {'\u2197'}
                   </a>
@@ -246,12 +246,12 @@ export default function CountryPanel({
 
                 {/* Sticky table of contents */}
                 {toc.length > 0 && (
-                  <nav className="sticky top-0 z-10 flex gap-2 overflow-x-auto border-b border-neutral-200 bg-white/95 px-4 py-2 backdrop-blur">
+                  <nav className="sticky top-0 z-10 flex gap-2 overflow-x-auto border-b border-neutral-200 bg-white/95 px-4 py-2 backdrop-blur dark:border-neutral-800 dark:bg-neutral-900/95">
                     {toc.map((t) => (
                       <button
                         key={t.id}
                         onClick={() => scrollTo(t.id)}
-                        className="whitespace-nowrap rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition hover:bg-landActive/30"
+                        className="whitespace-nowrap rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700 transition hover:bg-landActive/30 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-landActive/30"
                       >
                         {t.label}
                       </button>
@@ -262,7 +262,7 @@ export default function CountryPanel({
                 {/* Body */}
                 <div className="px-4 pb-10 pt-3">
                   {data.intro && (
-                    <p className="mb-2 text-[15px] leading-relaxed text-neutral-800">
+                    <p className="mb-2 text-[15px] leading-relaxed text-neutral-800 dark:text-neutral-200">
                       {data.intro}
                     </p>
                   )}
@@ -282,7 +282,7 @@ export default function CountryPanel({
                     </div>
                   ) : wiki ? (
                     <div
-                      className="wiki-html mt-3 text-[15px] text-neutral-800"
+                      className="wiki-html mt-3 text-[15px] text-neutral-800 dark:text-neutral-200"
                       dangerouslySetInnerHTML={{ __html: wiki.html }}
                     />
                   ) : (
@@ -303,7 +303,7 @@ export default function CountryPanel({
 function PanelSkeleton({ name }: { name: string | null }) {
   return (
     <div>
-      <div className="relative h-44 w-full overflow-hidden bg-neutral-200 md:h-52">
+      <div className="relative h-44 w-full overflow-hidden bg-neutral-200 md:h-52 dark:bg-neutral-800">
         <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 to-transparent" />
         <div className="absolute bottom-4 left-4">
           <div className="font-serif text-2xl font-bold text-white drop-shadow">{name}</div>
@@ -311,11 +311,11 @@ function PanelSkeleton({ name }: { name: string | null }) {
       </div>
       <div className="space-y-3 p-4">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="h-3.5 w-full rounded bg-neutral-200" style={{ width: `${90 - i * 7}%` }} />
+          <div key={i} className="h-3.5 w-full rounded bg-neutral-200 dark:bg-neutral-800" style={{ width: `${90 - i * 7}%` }} />
         ))}
         <div className="mt-4 grid grid-cols-2 gap-3">
-          <div className="aspect-[4/3] rounded-lg bg-neutral-200" />
-          <div className="aspect-[4/3] rounded-lg bg-neutral-200" />
+          <div className="aspect-[4/3] rounded-lg bg-neutral-200 dark:bg-neutral-800" />
+          <div className="aspect-[4/3] rounded-lg bg-neutral-200 dark:bg-neutral-800" />
         </div>
       </div>
     </div>
@@ -326,11 +326,11 @@ function EmptyState({ name }: { name: string }) {
   return (
     <div className="py-10 text-center">
       <div className="mb-2 text-4xl">{'\u{1F5FA}\u{FE0F}'}</div>
-      <p className="text-sm text-neutral-600">
+      <p className="text-sm text-neutral-600 dark:text-neutral-300">
         We don't have a detailed architecture history for{' '}
         <span className="font-semibold">{name}</span> yet.
       </p>
-      <p className="mt-1 text-xs text-neutral-400">
+      <p className="mt-1 text-xs text-neutral-400 dark:text-neutral-500">
         Try one of the featured countries highlighted on the map.
       </p>
     </div>

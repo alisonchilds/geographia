@@ -6,6 +6,10 @@
   color-scheme: light;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
 html,
 body,
 #root {
@@ -17,6 +21,11 @@ body {
   font-family: theme('fontFamily.sans');
   color: theme('colors.ink');
   overflow: hidden;
+}
+
+html.dark body {
+  color: #e5e7eb;
+  background: #0b1220;
 }
 
 /* Wikipedia-style article typography for fetched HTML */
@@ -31,12 +40,19 @@ body {
 .wiki-html a:hover {
   text-decoration: underline;
 }
+html.dark .wiki-html a {
+  color: #8ab4ff;
+}
 .wiki-html h2,
 .wiki-html h3 {
   font-family: theme('fontFamily.serif');
   border-bottom: 1px solid #eaecf0;
   padding-bottom: 0.2rem;
   margin: 1.2rem 0 0.6rem;
+}
+html.dark .wiki-html h2,
+html.dark .wiki-html h3 {
+  border-bottom-color: #374151;
 }
 .wiki-html ul {
   list-style: disc;
@@ -54,13 +70,23 @@ body {
 }
 
 /* Custom slim scrollbar for the panel */
+.panel-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(160, 165, 170, 0.45) transparent;
+}
 .panel-scroll::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 .panel-scroll::-webkit-scrollbar-thumb {
-  background: #c8ccd1;
-  border-radius: 4px;
+  background: rgba(160, 165, 170, 0.45);
+  border-radius: 999px;
 }
 .panel-scroll::-webkit-scrollbar-track {
   background: transparent;
+}
+html.dark .panel-scroll {
+  scrollbar-color: rgba(120, 125, 135, 0.35) transparent;
+}
+html.dark .panel-scroll::-webkit-scrollbar-thumb {
+  background: rgba(120, 125, 135, 0.35);
 }

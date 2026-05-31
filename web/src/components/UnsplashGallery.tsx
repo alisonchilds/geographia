@@ -13,18 +13,18 @@ export default function UnsplashGallery({ photos = [], loading = false }: Unspla
   if (!loading && photos.length === 0) return null;
 
   return (
-    <section className="mt-6 border-t border-neutral-200 pt-5">
+    <section className="mt-6 border-t border-neutral-200 pt-5 dark:border-neutral-800">
       <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-landActive">
         Photography
       </div>
-      <h3 className="mb-3 font-serif text-xl font-semibold text-ink">
+      <h3 className="mb-3 font-serif text-xl font-semibold text-ink dark:text-neutral-100">
         More from Unsplash
       </h3>
 
       {loading ? (
         <div className="grid grid-cols-3 gap-2">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="relative aspect-square overflow-hidden rounded-lg bg-neutral-200">
+            <div key={i} className="relative aspect-square overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800">
               <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 to-transparent" />
             </div>
           ))}
@@ -54,13 +54,13 @@ export default function UnsplashGallery({ photos = [], loading = false }: Unspla
         </div>
       )}
 
-      <p className="mt-2 text-[11px] text-neutral-400">
+      <p className="mt-2 text-[11px] text-neutral-400 dark:text-neutral-500">
         Photos via{' '}
         <a
           href="https://unsplash.com/?utm_source=atlas_of_architecture&utm_medium=referral"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-neutral-600"
+          className="underline hover:text-neutral-600 dark:hover:text-neutral-300"
         >
           Unsplash
         </a>
