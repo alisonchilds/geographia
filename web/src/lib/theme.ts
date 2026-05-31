@@ -13,9 +13,7 @@ function readInitial(): Theme {
   } catch {
     /* ignore */
   }
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
+  return 'light';
 }
 
 let current: Theme = readInitial();

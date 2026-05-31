@@ -142,7 +142,7 @@ export default function CountryPanel({
   // On desktop the panel floats as a card that starts BELOW the brand/search
   // overlay, so those never cover the hero or the sticky sub-nav.
   const positionClass = isMobile
-    ? `inset-x-3 bottom-3 rounded-2xl ${expanded ? 'h-[88vh]' : 'h-[80vh]'}`
+    ? 'inset-x-3 bottom-3 h-[80vh] rounded-2xl'
     : `left-3 top-[84px] bottom-3 rounded-2xl ${expanded ? 'w-[min(860px,94vw)]' : 'w-[min(420px,calc(100%-1.5rem))]'}`;
 
   return (
@@ -155,36 +155,31 @@ export default function CountryPanel({
           exit="hidden"
           variants={variants}
           transition={{ type: 'spring', stiffness: 320, damping: 34 }}
-          className={`absolute z-30 flex flex-col overflow-hidden bg-white shadow-panel transition-[width,height] duration-300 ease-out dark:bg-neutral-900 ${positionClass}`}
+          className={`absolute z-30 flex flex-col overflow-hidden bg-white shadow-panel transition-[width] duration-300 ease-out dark:bg-neutral-900 ${positionClass}`}
         >
-          {/* Mobile drag handle */}
-          {isMobile && (
-            <div className="flex justify-center pt-2">
-              <div className="h-1.5 w-10 rounded-full bg-neutral-300 dark:bg-neutral-600" />
-            </div>
-          )}
-
           <div ref={scrollRef} className="panel-scroll relative flex-1 overflow-y-auto">
             {/* Expand + close buttons. Zero-height sticky row pinned just below
                 the sub-nav so the sticky TOC never covers them on scroll. */}
             <div className="pointer-events-none sticky top-11 z-20 h-0">
               <div className="pointer-events-none flex justify-end gap-2 px-3">
-                <button
-                  onClick={() => setExpanded((e) => !e)}
-                  aria-label={expanded ? 'Collapse panel' : 'Expand panel'}
-                  title={expanded ? 'Collapse' : 'Expand'}
-                  className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-neutral-800/90 dark:text-neutral-100 dark:hover:bg-neutral-700"
-                >
-                  {expanded ? (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path d="M9 9 4 4m0 0v4m0-4h4m6 6 5 5m0 0v-4m0 4h-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  ) : (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path d="M4 9V4h5M20 9V4h-5M4 15v5h5m11-5v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  )}
-                </button>
+                {!isMobile && (
+                  <button
+                    onClick={() => setExpanded((e) => !e)}
+                    aria-label={expanded ? 'Collapse panel' : 'Expand panel'}
+                    title={expanded ? 'Collapse' : 'Expand'}
+                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-neutral-800/90 dark:text-neutral-100 dark:hover:bg-neutral-700"
+                  >
+                    {expanded ? (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 9 4 4m0 0v4m0-4h4m6 6 5 5m0 0v-4m0 4h-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    ) : (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5m11-5v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </button>
+                )}
                 <button
                   onClick={onClose}
                   aria-label="Close"
