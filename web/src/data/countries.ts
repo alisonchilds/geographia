@@ -1,5 +1,5 @@
 import type { CountryContent } from '../types';
-import { commons } from '../lib/images';
+import { commons, imageSrc } from '../lib/images';
 
 // Curated, hand-written architecture histories for flagship countries.
 // Keys MUST match the `properties.name` field in public/countries-110m.json so
@@ -152,9 +152,9 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Gaul & Roman France',
         text: 'Long before France, Celtic Gaul raised ritual landscapes such as the alignments at Carnac. Roman conquest brought cities, forums, and aqueducts in stone and concrete. The Maison Carr\u00e9e at N\u00eemes preserves a near-perfect Roman temple, while the Pont du Gard still carries an aqueduct across the Gardon \u2014 engineering that underpinned the urban life of Lugdunum, Lutetia, and dozens of provincial towns.',
         media: [
-          { kind: 'image', src: commons('Carnac - alignements de Carnac - menhirs.jpg', 1200), caption: 'Megalithic alignments at Carnac, Brittany', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Maison Carrée in Nîmes (16).jpg', 1200), caption: 'Maison Carr\u00e9e, N\u00eemes (c. 2\u201310 CE)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Pont du Gard BLS.jpg', 1200), caption: 'Pont du Gard aqueduct (1st c. CE)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Alignements de Carnac, Morbihan (France).jpg', 1200), caption: 'Megalithic alignments at Carnac, Brittany', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Maison Carree in Nimes (16).jpg', 1200), caption: 'Maison Carr\u00e9e, N\u00eemes (c. 2\u201310 CE)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Pont du Gard BLS.jpg', 1200), caption: 'Pont du Gard aqueduct (1st c. CE)', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -163,8 +163,8 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Early Christian & Merovingian',
         text: 'Christianity reshaped the landscape with baptisteries, basilicas, and monasteries. The Baptist\u00e8re Saint-Jean at Poitiers is among the oldest surviving Christian buildings in France, while the royal abbey of Saint-Denis, rebuilt under the Carolingians, became the burial church of French kings and a laboratory for early rib vaulting.',
         media: [
-          { kind: 'image', src: commons('Baptistère Saint-Jean de Poitiers.jpg', 1200), caption: 'Baptist\u00e8re Saint-Jean, Poitiers (4th\u20137th c.)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Basilica of St Denis, west facade.jpg', 1000), caption: 'Basilica of Saint-Denis (rebuilt from 7th c.)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Poitiers - Baptistère Saint-Jean - 01.jpg', 1200), caption: 'Baptist\u00e8re Saint-Jean, Poitiers (4th\u20137th c.)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Saint-Denis - Façade.jpg', 1000), caption: 'Basilica of Saint-Denis (rebuilt from 7th c.)', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -173,8 +173,8 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Romanesque',
         text: 'On pilgrimage routes to Santiago, France built hundreds of stone churches with thick walls, barrel vaults, and sculpted portals. Saint-Sernin at Toulouse stretches along an aisled basilica plan capped by a vast stone vault, while V\u00e9zelay\u2019s hilltop church stages biblical narrative in its tympanum and radiating chapels.',
         media: [
-          { kind: 'image', src: commons('Basilique Saint-Sernin de Toulouse - exterieur.jpg', 1200), caption: 'Basilica of Saint-Sernin, Toulouse (11th\u201312th c.)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Vézelay Basilica.jpg', 1200), caption: 'Basilica of Sainte-Marie-Madeleine, V\u00e9zelay', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Basilique Saint-Sernin de Toulouse - exposition ouest-1-.jpg', 1200), caption: 'Basilica of Saint-Sernin, Toulouse (11th\u201312th c.)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Vezelay-7776-Bearbeitet.jpg', 1200), caption: 'Basilica of Sainte-Marie-Madeleine, V\u00e9zelay', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -183,9 +183,9 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Gothic',
         text: 'Born in the \u00cele-de-France, Gothic architecture turned stone into light: pointed arches, rib vaults, and vast stained-glass windows. Chartres Cathedral refined the type in a single campaign of harmony, Notre-Dame de Paris stacked storeys of flying buttresses and rose windows, and the Sainte-Chapelle enclosed a jewel-box interior of almost pure glass.',
         media: [
-          { kind: 'image', src: commons('Chartres Cathedral west façade.jpg', 1200), caption: 'Chartres Cathedral (begun 1194)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Notre Dame de Paris, western facade.jpg', 1200), caption: 'Notre-Dame de Paris (1163\u20131345)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Sainte-Chapelle - Upper level 2010.jpg', 1000), caption: 'Sainte-Chapelle, Paris (1241\u201348)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Notre Dame de Chartres.jpg', 1200), caption: 'Chartres Cathedral (begun 1194)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('NotreDameDeParis.jpg', 1200), caption: 'Notre-Dame de Paris (1163\u20131345)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Sainte Chapelle - Upper level 1.jpg', 1000), caption: 'Sainte-Chapelle, Paris (1241\u201348)', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -194,8 +194,8 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Renaissance',
         text: 'French kings imported Italian classicism and fused it with medieval ch\u00e2teau planning. Chambord\u2019s double-helix stair and forest of chimneys dramatise royal power in the Loire Valley, while the Galerie François I at Fontainebleau launched the School of Fontainebleau \u2014 Mannerist painting and stucco woven into architecture.',
         media: [
-          { kind: 'image', src: commons('Chateau de Chambord.jpg', 1200), caption: 'Ch\u00e2teau de Chambord (begun 1519)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Palace of Fontainebleau - Francis I Gallery 01.jpg', 1200), caption: 'Galerie François I, Fontainebleau (1528\u201334)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Chateau de Chambord.jpg', 1200), caption: 'Ch\u00e2teau de Chambord (begun 1519)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Fontainebleau interior francois I gallery 04.JPG', 1200), caption: 'Galerie François I, Fontainebleau (1528\u201334)', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -204,7 +204,7 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Baroque & French Classicism',
         text: 'The absolute monarchy built at a scale to match its ambitions. Versailles turned a hunting lodge into Europe\u2019s grandest palace, aligning gardens, fountains, and the Hall of Mirrors on infinite axes. In Paris, the dome of Les Invalides and the Salon de la Princesse at the H\u00f4tel de Soubise show Baroque movement tempered by French clarity and etiquette.',
         media: [
-          { kind: 'image', src: commons('Chateau Versailles Galerie des Glaces.jpg', 1200), caption: 'Hall of Mirrors, Palace of Versailles (1678\u20131684)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Versailles Galerie des glaces.jpg', 1200), caption: 'Hall of Mirrors, Palace of Versailles (1678\u20131684)', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -213,7 +213,7 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Rococo',
         text: 'Rococo softened Baroque grandeur into intimate curves, mirrors, and pastel ornament for aristocratic salons. The Salon de la Princesse at the H\u00f4tel de Soubise is a masterpiece of gilded boiserie, while provincial cities such as Nancy rebuilt their squares as unified ensembles of wrought iron, stone, and gilded gates.',
         media: [
-          { kind: 'image', src: commons('Hôtel de Soubise - Salon de la Princesse 01.jpg', 1200), caption: 'Salon de la Princesse, H\u00f4tel de Soubise, Paris (1737\u201340)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Salon ovale de la princesse in the Hôtel de Soubise (02).jpg', 1200), caption: 'Salon de la Princesse, H\u00f4tel de Soubise, Paris (1737\u201340)', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -222,9 +222,9 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Neoclassical',
         text: 'Enlightenment architects looked to antiquity for models of civic virtue. Soufflot\u2019s Panth\u00e9on reimagined a Roman temple as a secular monument to the nation, while the Madeleine and the Arc de Triomphe framed Paris with colossal classical forms. The style gave revolutionary and imperial France a shared architectural language of gravitas.',
         media: [
-          { kind: 'image', src: commons('Panthéon Paris 1.jpg', 1200), caption: 'Panth\u00e9on, Paris (1758\u201390)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('La Madeleine, Paris 25 May 2013.jpg', 1000), caption: 'La Madeleine, Paris (consecrated 1842)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Arc de Triomphe, Paris 21 October 2010.jpg', 1000), caption: 'Arc de Triomphe, Paris (1806\u201336)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Pantheon of Paris 007.JPG', 1200), caption: 'Panth\u00e9on, Paris (1758\u201390)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Madeleine Paris.jpg', 1000), caption: 'La Madeleine, Paris (consecrated 1842)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Arc de Triomphe, Paris 21 October 2010.jpg', 1000), caption: 'Arc de Triomphe, Paris (1806\u201336)', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -233,8 +233,8 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Haussmann & the 19th century',
         text: 'Baron Haussmann cut wide boulevards through medieval Paris, standardising stone facades, zinc roofs, and public amenities that still define the city. Monumental theatres and stations followed: Garnier\u2019s Op\u00e9ra is a marble and gilt celebration of Second Empire taste, while the Eiffel Tower demonstrated iron\u2019s power to mark a modern nation at the 1889 Exposition.',
         media: [
-          { kind: 'image', src: commons('Paris Opera full frontal view, May 2009.jpg', 1200), caption: 'Palais Garnier, Paris (1861\u201375)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Palais Garnier, Paris 30 January 2010.jpg', 1000), caption: 'Grand staircase, Palais Garnier', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Paris Opera full frontal architecture, May 2009.jpg', 1200), caption: 'Palais Garnier, Paris (1861\u201375)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Opera Garnier Grand Escalier.jpg', 1000), caption: 'Grand staircase, Palais Garnier', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -243,7 +243,7 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Art Nouveau & Belle \u00c9poque',
         text: 'At the turn of the century, Hector Guimard and the \u00c9cole de Nancy wrapped iron, glass, and tile in organic curves. Cast-iron M\u00e9tro entrances still signal Parisian modernity, while regional designers such as \u00c9mile Gall\u00e9 united furniture, stained glass, and architecture into a total decorative environment.',
         media: [
-          { kind: 'image', src: commons('Entrée du métro Abbesses (Paris).jpg', 1000), caption: 'Guimard M\u00e9tro entrance, Abbesses, Paris', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Paris (75018) Métro Abbesses Édicule Guimard.jpg', 1000), caption: 'Guimard M\u00e9tro entrance, Abbesses, Paris', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -252,10 +252,17 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Modernism',
         text: 'Le Corbusier proposed the house as a machine for living and the city as a rational plan. Villa Savoye floats on pilotis with a ribbon window and roof garden, while the chapel at Ronchamp sculpts thick walls and a soaring concrete roof into spiritual drama. In Marseille, the Unit\u00e9 d\u2019habitation tested high-rise communal living; in Paris, the Centre Pompidou turned structure and services inside out.',
         media: [
-          { kind: 'image', src: commons('Villa Savoye west facade.jpg', 1200), caption: 'Villa Savoye, Poissy (Le Corbusier, 1929\u201331)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Ronchamp Chapelle Notre Dame du Haut npa 1953.jpg', 1200), caption: 'Notre-Dame du Haut, Ronchamp (Le Corbusier, 1955)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons("Unité d'habitation de Marseille.jpg", 1000), caption: 'Unit\u00e9 d\u2019habitation, Marseille (1947\u201352)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Centre Pompidou 2012.jpg', 1000), caption: 'Centre Pompidou, Paris (1977)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Villa Savoye (8237925975).jpg', 1200), caption: 'Villa Savoye, Poissy (Le Corbusier, 1929\u201331)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Chapelle Notre-Dame-du Haut 04.jpg', 1200), caption: 'Notre-Dame du Haut, Ronchamp (Le Corbusier, 1955)', credit: 'Wikimedia Commons' },
+          {
+            kind: 'image',
+            src: imageSrc(
+              'https://upload.wikimedia.org/wikipedia/en/6/66/Marseille_-_Cit%C3%A9_Radieuse_%2816234847979%29.jpg',
+            ),
+            caption: 'Unit\u00e9 d\u2019habitation, Marseille (1947\u201352)',
+            credit: 'Wikimedia Commons',
+          },
+          { kind: 'image', src: imageSrc('0 Centre Georges-Pompidou - 1986 Paris.JPG', 1000), caption: 'Centre Pompidou, Paris (1977)', credit: 'Wikimedia Commons' },
         ],
       },
       {
@@ -264,9 +271,9 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Contemporary',
         text: 'Presidents from Mitterrand to Macron sponsored grands projets that mixed heritage with bold new forms. I. M. Pei\u2019s glass pyramid reframed the Louvre courtyard, Jean Nouvel\u2019s Fondation Louis Vuitton folded sails of glass above the Bois de Boulogne, and La Grande Arche at La D\u00e9fense completed a modern axis to the west of Paris.',
         media: [
-          { kind: 'image', src: commons('Louvre Pyramid at night 2017.jpg', 1200), caption: 'Louvre Pyramid, Paris (I. M. Pei, 1989)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Fondation Louis Vuitton, Paris 22 October 2014.jpg', 1200), caption: 'Fondation Louis Vuitton, Paris (Jean Nouvel, 2014)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Grande Arche de la Défense.jpg', 1000), caption: 'Grande Arche de la D\u00e9fense (1989)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Cour Napoléon at night - Louvre.jpg', 1200), caption: 'Louvre Pyramid and courtyard, Paris (I. M. Pei, 1989)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Fondation Louis Vuitton 20160413 South 01.jpg', 1200), caption: 'Fondation Louis Vuitton, Paris (Jean Nouvel, 2014)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Grande Arche, France - April 2011.jpg', 1000), caption: 'Grande Arche de la D\u00e9fense (1989)', credit: 'Wikimedia Commons' },
         ],
       },
     ],
