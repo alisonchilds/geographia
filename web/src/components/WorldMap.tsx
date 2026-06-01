@@ -45,11 +45,12 @@ export default function WorldMap({
     onHoverChange?.(name);
   };
 
-  const fillFor = (name: string, isSelected: boolean, isHovered: boolean) =>
-    getAtlasLandFill(
-      name,
-      isSelected ? 'selected' : isHovered ? 'hover' : 'default',
-    );
+  const fillFor = (name: string, isSelected: boolean, isHovered: boolean) => {
+    if (isSelected) {
+      return isHovered ? ATLAS.landHover.red : ATLAS.land.red;
+    }
+    return getAtlasLandFill(name, isHovered ? 'hover' : 'default');
+  };
 
   return (
     <div className="absolute inset-0" style={{ backgroundColor: ATLAS.background }}>
@@ -105,7 +106,7 @@ export default function WorldMap({
                         cursor: 'pointer',
                       },
                       pressed: {
-                        fill: ATLAS.selected,
+                        fill: ATLAS.land.red,
                         outline: 'none',
                       },
                     }}

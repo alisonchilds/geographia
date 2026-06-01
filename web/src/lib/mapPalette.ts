@@ -15,13 +15,10 @@ export const ATLAS = {
     tan: '#ecd4a8',
     white: '#f5f5f5',
   },
-  selected: '#f5c842',
   stroke: '#184d88',
 } as const;
 
 export type AtlasLandTone = keyof typeof ATLAS.land;
-
-const RED = new Set(['United States of America']);
 
 const WHITE = new Set(['Greenland', 'Antarctica', 'Fr. S. Antarctic Lands']);
 
@@ -43,7 +40,6 @@ const TAN = new Set([
 ]);
 
 export function getAtlasLandTone(countryName: string): AtlasLandTone {
-  if (RED.has(countryName)) return 'red';
   if (WHITE.has(countryName)) return 'white';
   if (TAN.has(countryName)) return 'tan';
   return 'green';
@@ -53,7 +49,9 @@ export function getAtlasLandFill(
   countryName: string,
   state: 'default' | 'hover' | 'selected',
 ): string {
-  if (state === 'selected') return ATLAS.selected;
+  if (state === 'selected') {
+    return ATLAS.land.red;
+  }
   const tone = getAtlasLandTone(countryName);
   return state === 'hover' ? ATLAS.landHover[tone] : ATLAS.land[tone];
 }
