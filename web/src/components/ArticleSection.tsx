@@ -5,6 +5,8 @@ import SmartImage from './SmartImage';
 interface ArticleSectionProps {
   era: Era;
   wide?: boolean;
+  // Bottom-sheet layout: always stack images so pairs are not squeezed side by side.
+  stackImages?: boolean;
   // Extra media (e.g. live Unsplash photos) mixed into this era's image grid.
   extraMedia?: Media[];
 }
@@ -50,16 +52,26 @@ function Figure({ media, large }: { media: Media; large?: boolean }) {
   );
 }
 
-export default function ArticleSection({ era, wide = false, extraMedia = [] }: ArticleSectionProps) {
+export default function ArticleSection({
+  era,
+  wide = false,
+  stackImages = false,
+  extraMedia = [],
+}: ArticleSectionProps) {
   const media = extraMedia.length > 0 ? [...era.media, ...extraMedia] : era.media;
 
   // Never use more columns than there are images, so two images always span the
   // full width (50/50) instead of leaving an empty third column when expanded.
   const maxCols = wide ? 3 : 2;
   const colCount = Math.min(media.length, maxCols);
-  const desktopCols =
-    colCount >= 3 ? 'md:grid-cols-3' : colCount === 2 ? 'md:grid-cols-2' : 'md:grid-cols-1';
-  const largeImages = colCount <= 2;
+  const gridCols = stackImages
+    ? 'grid-cols-1'
+    : colCount >= 3
+      ? 'grid-cols-3'
+      : colCount === 2
+        ? 'grid-cols-2'
+        : 'grid-cols-1';
+  const largeImages = stackImages || colCount <= 2;
   return (
     <motion.section
       id={`era-${era.id}`}
@@ -76,7 +88,7 @@ export default function ArticleSection({ era, wide = false, extraMedia = [] }: A
       <p className="mb-4 text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-300">{era.text}</p>
 
       {media.length > 0 && (
-        <div className={`grid grid-cols-1 gap-4 ${desktopCols}`}>
+        <div className={`grid gap-4 ${gridCols}`}>
           {media.map((m, i) => (
             <Figure key={i} media={m} large={largeImages} />
           ))}

@@ -269,6 +269,7 @@ export default function CountryPanel({
                           key={era.id}
                           era={era}
                           wide={expanded && !isMobile}
+                          stackImages={isMobile}
                           extraMedia={(eraPhotoMap[era.id] ?? [])
                             .slice(0, 1)
                             .map(photoToMedia)}
