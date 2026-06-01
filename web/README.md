@@ -13,8 +13,8 @@ from Wikipedia.
 - **Stylized SVG world map** (no API key) with smooth pan/zoom, hover highlighting, and
   fly-to-country on selection.
 - **Hybrid content model**
-  - Curated, multi-era histories for flagship countries: Italy, France, Japan, Egypt,
-    India, Greece, Mexico.
+  - Curated, multi-era histories for flagship countries: Italy, France, United States,
+    Japan, Egypt, India, Greece, Mexico.
   - Live fallback for any other country via the Wikipedia REST + Action APIs.
 - **Wikipedia-style panel**: hero image, sticky table-of-contents, era sections, image
   galleries with captions/credits, and a "View on Wikipedia" link.

@@ -279,6 +279,132 @@ export const CURATED: Record<string, CountryContent> = {
     ],
   },
 
+  'United States of America': {
+    name: 'United States of America',
+    wikipediaTitle: 'Architecture_of_the_United_States',
+    flagEmoji: '\u{1F1FA}\u{1F1F8}',
+    tagline: 'From ancient mounds to the modern skyline',
+    heroImage: imageSrc('United States Capitol west front edit2.jpg', 1400),
+    heroCredit: 'United States Capitol \u2014 Wikimedia Commons',
+    intro:
+      'American architecture weaves together Indigenous earthworks and pueblos, colonial Georgian towns, a Neoclassical capital city, the invention of the steel-frame skyscraper, and waves of modernism that reshaped the world. From Monticello and the Chicago School to Frank Lloyd Wright, Art Deco towers, and contemporary cultural landmarks, the United States produced building types and ideas that defined twentieth-century urban life.',
+    eras: [
+      {
+        id: 'indigenous',
+        period: 'c. 1000 BCE \u2013 1600 CE',
+        title: 'Indigenous & Pre-Columbian',
+        text: 'Long before European contact, Indigenous peoples built at monumental scale. Cahokia\u2019s Monks Mound anchored a Mississippian city larger than London in 1250, cliff dwellings at Mesa Verde sheltered Ancestral Pueblo communities, and Taos Pueblo has been continuously inhabited for over a millennium in adobe tiers.',
+        media: [
+          { kind: 'image', src: imageSrc('Monks Mound in July.JPG', 1200), caption: 'Monks Mound, Cahokia Mounds, Illinois', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Cliff Palace-Colorado-Mesa Verde NP.jpg', 1200), caption: 'Cliff Palace, Mesa Verde National Park', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Taos Pueblo 2017-05-05.jpg', 1000), caption: 'Taos Pueblo, New Mexico', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'colonial',
+        period: 'c. 1600 \u2013 1776',
+        title: 'Colonial',
+        text: 'English, Dutch, Spanish, and French settlers adapted European building types to local materials and climates. Georgian symmetry, brick bond, and paneled interiors defined port cities and plantation houses; Independence Hall in Philadelphia became the architectural stage for the nation\u2019s founding documents.',
+        media: [
+          { kind: 'image', src: imageSrc('Independence Hall.jpg', 1200), caption: 'Independence Hall, Philadelphia (1753)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'federal',
+        period: 'c. 1776 \u2013 1830',
+        title: 'Federal & Neoclassical',
+        text: 'The new republic looked to Rome and Greece for civic models. Thomas Jefferson\u2019s Monticello fused Palladian planning with inventive domestic detail, while the United States Capitol grew into a symbol of democracy under architects such as Benjamin Latrobe and Thomas U. Walter, crowned by its cast-iron dome.',
+        media: [
+          { kind: 'image', src: imageSrc('Monticello reflected.JPG', 1200), caption: 'Monticello, Virginia (Jefferson, begun 1768)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('United States Capitol west front edit2.jpg', 1200), caption: 'United States Capitol, Washington, D.C.', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'gothic-revival',
+        period: 'c. 1830 \u2013 1870',
+        title: 'Gothic Revival & Romanticism',
+        text: 'Victorian America embraced medieval forms for churches, campuses, and civic buildings. H. H. Richardson\u2019s rugged Romanesque gave way to High Gothic spires; Trinity Church in Boston, designed by Richardson, anchors Copley Square with polychrome stone and a soaring tower.',
+        media: [
+          { kind: 'image', src: imageSrc('Trinity Church, Boston, Massachusetts LCCN2011630431.jpg', 1200), caption: 'Trinity Church, Boston (H. H. Richardson, 1877)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'gilded-age',
+        period: 'c. 1870 \u2013 1900',
+        title: 'Gilded Age & Beaux-Arts',
+        text: 'Industrial wealth funded palatial estates and grand civic projects. The Biltmore Estate in Asheville translated French ch\u00e2teau romance into Appalachian stone, while Beaux-Arts training produced opulent libraries, train stations, and fairgrounds that announced America\u2019s arrival as a global power.',
+        media: [
+          { kind: 'image', src: imageSrc('Biltmore Estate, Asheville, North Carolina.jpg', 1200), caption: 'Biltmore Estate, Asheville (Richard Morris Hunt, 1895)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'chicago-school',
+        period: 'c. 1880 \u2013 1910',
+        title: 'Chicago School & the Skyscraper',
+        text: 'After the Great Fire, Chicago architects pioneered the metal skeleton frame, large plate-glass windows, and restrained commercial facades that made the modern skyscraper possible. Louis Sullivan\u2019s Wainwright Building in St. Louis distilled structure and ornament into a vertical formula repeated across downtown America.',
+        media: [
+          { kind: 'image', src: imageSrc('Wainwright Building, 7th Street and Chestnut Street, St. Louis, MO - 53051647915.jpg', 1200), caption: 'Wainwright Building, St. Louis (Louis Sullivan, 1891)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'prairie-school',
+        period: 'c. 1900 \u2013 1920',
+        title: 'Prairie School',
+        text: 'Frank Lloyd Wright and his circle developed a horizontal, regionally rooted modernism: low roofs, open plans, and bands of windows that linked house to prairie. The Robie House in Chicago is the movement\u2019s masterpiece \u2014 a composition of cantilevered planes and hidden structure.',
+        media: [
+          { kind: 'image', src: imageSrc('Robie House.jpg', 1200), caption: 'Robie House, Chicago (Frank Lloyd Wright, 1910)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'art-deco',
+        period: 'c. 1920 \u2013 1940',
+        title: 'Art Deco & the Jazz Age',
+        text: 'Between the wars, American cities raced upward in setbacks of terra-cotta, stainless steel, and stylised ornament. The Empire State Building held the height record for forty years, while the Chrysler Building\u2019s sunburst crown turned a Manhattan tower into a gleaming Art Deco icon.',
+        media: [
+          { kind: 'image', src: imageSrc('Empire State Building from the Top of the Rock.jpg', 1200), caption: 'Empire State Building, New York (1931)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('View of Chrysler Building from Empire State Building, New York City, 20231001 1510 1364.jpg', 1000), caption: 'Chrysler Building, New York (William Van Alen, 1930)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'international',
+        period: 'c. 1940 \u2013 1970',
+        title: 'International Style',
+        text: 'European modernism found a second home in postwar America. Mies van der Rohe\u2019s Seagram Building raised bronze-and-glass minimalism on Park Avenue, while Frank Lloyd Wright\u2019s Guggenheim Museum spiralled art and architecture into a single sculptural ramp above Fifth Avenue.',
+        media: [
+          { kind: 'image', src: imageSrc('Seagram Building (35098307116).jpg', 1200), caption: 'Seagram Building, New York (Mies van der Rohe, 1958)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Solomon R. Guggenheim Museum.jpg', 1000), caption: 'Solomon R. Guggenheim Museum, New York (Frank Lloyd Wright, 1959)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'organic-modern',
+        period: 'c. 1930 \u2013 1960',
+        title: 'Organic Modernism',
+        text: 'Wright pushed modern architecture toward landscape and craft. Fallingwater cantilevers over a Pennsylvania waterfall, its reinforced-concrete trays and local stone dissolving the boundary between building and nature \u2014 one of the most influential houses of the twentieth century.',
+        media: [
+          { kind: 'image', src: imageSrc('Fallingwater3.jpg', 1200), caption: 'Fallingwater, Pennsylvania (Frank Lloyd Wright, 1939)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'postmodern',
+        period: 'c. 1970 \u2013 2000',
+        title: 'Postmodern & Late Modern',
+        text: 'Architects reacted against corporate modernism with colour, historical quotation, and expressive silhouettes. San Francisco\u2019s Transamerica Pyramid gave the skyline a distinctive tapering form, while campus and civic buildings mixed glass technology with playful, human-scaled references.',
+        media: [
+          { kind: 'image', src: imageSrc('Transamerica Pyramid from Columbus.jpg', 1200), caption: 'Transamerica Pyramid, San Francisco (William Pereira, 1972)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'contemporary',
+        period: 'c. 2000 \u2013 present',
+        title: 'Contemporary',
+        text: 'Today\u2019s landmarks favour sculptural form and performance-driven design. Frank Gehry\u2019s Walt Disney Concert Hall wraps stainless-steel sails around a concert hall tuned by Yasuhisa Toyota, signalling Los Angeles as a capital of contemporary cultural architecture.',
+        media: [
+          { kind: 'image', src: imageSrc('Walt Disney Concert Hall, LA, CA, jjron 22.03.2012.jpg', 1200), caption: 'Walt Disney Concert Hall, Los Angeles (Frank Gehry, 2003)', credit: 'Wikimedia Commons' },
+        ],
+      },
+    ],
+  },
+
   Japan: {
     name: 'Japan',
     wikipediaTitle: 'Japanese_architecture',
