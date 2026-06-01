@@ -11,7 +11,8 @@ import type { PanelData } from './types';
 // Prefixed with Vite's base URL so it resolves under the GitHub Pages
 // subpath (/geographia/) in production and at root ('/') during dev.
 const GEO_URL = `${import.meta.env.BASE_URL}countries-110m.json`;
-const HOME: MapPosition = { coordinates: [0, 20], zoom: 1 };
+// Center on the Americas to match the stylized atlas globe composition.
+const HOME: MapPosition = { coordinates: [-95, 25], zoom: 1 };
 
 const CURATED_NAMES = new Set(Object.keys(CURATED));
 

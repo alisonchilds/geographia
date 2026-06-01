@@ -5,10 +5,9 @@ import {
   Geography,
   ZoomableGroup,
   Sphere,
-  Graticule,
 } from 'react-simple-maps';
 import { geoCentroid } from 'd3-geo';
-import { useIsDark } from '../lib/theme';
+import { ATLAS, getAtlasLandFill } from '../lib/mapPalette';
 
 // Prefixed with Vite's base URL so the topojson resolves under the GitHub
 // Pages subpath (/geographia/) in production and at root ('/') during dev.
@@ -40,41 +39,20 @@ export default function WorldMap({
   onHoverChange,
 }: WorldMapProps) {
   const [hovered, setHovered] = useState<string | null>(null);
-  const dark = useIsDark();
 
   const setHover = (name: string | null) => {
     setHovered(name);
     onHoverChange?.(name);
   };
 
-  const c = dark
-    ? {
-        ocean: 'bg-[#0b1220]',
-        sphereFill: '#0e1726',
-        sphereStroke: '#1e2a40',
-        graticule: '#1b2640',
-        landDefault: '#334155',
-        landCurated: '#3d4a63',
-        landHover: '#4b5a73',
-        landSelected: '#c9a86a',
-        strokeDefault: '#1e293b',
-        strokeHover: '#94a3b8',
-      }
-    : {
-        ocean: 'bg-ocean',
-        sphereFill: '#aadaff',
-        sphereStroke: '#cfe8ff',
-        graticule: '#cfe8ff',
-        landDefault: '#e9e3d6',
-        landCurated: '#dcd3bf',
-        landHover: '#d9cfba',
-        landSelected: '#c9a86a',
-        strokeDefault: '#b9ad93',
-        strokeHover: '#8a7c5c',
-      };
+  const fillFor = (name: string, isSelected: boolean, isHovered: boolean) =>
+    getAtlasLandFill(
+      name,
+      isSelected ? 'selected' : isHovered ? 'hover' : 'default',
+    );
 
   return (
-    <div className={`absolute inset-0 ${c.ocean}`}>
+    <div className="absolute inset-0" style={{ backgroundColor: ATLAS.background }}>
       <ComposableMap
         projection="geoEqualEarth"
         projectionConfig={{ scale: 170 }}
@@ -89,23 +67,19 @@ export default function WorldMap({
           maxZoom={8}
           onMoveEnd={onMoveEnd}
         >
-          <Sphere id="sphere" stroke={c.sphereStroke} strokeWidth={0.6} fill={c.sphereFill} />
-          <Graticule stroke={c.graticule} strokeWidth={0.4} />
+          <Sphere
+            id="sphere"
+            stroke={ATLAS.oceanStroke}
+            strokeWidth={1.2}
+            fill={ATLAS.ocean}
+          />
           <Geographies geography={GEO_URL}>
             {({ geographies }: { geographies: Geo[] }) =>
               geographies.map((geo) => {
                 const name: string = geo.properties.name;
                 const isSelected = selectedCountry === name;
                 const isHovered = hovered === name;
-                const isCurated = curatedNames.has(name);
-
-                const fill = isSelected
-                  ? c.landSelected
-                  : isHovered
-                    ? c.landHover
-                    : isCurated
-                      ? c.landCurated
-                      : c.landDefault;
+                const fill = fillFor(name, isSelected, isHovered);
 
                 return (
                   <Geography
@@ -118,20 +92,20 @@ export default function WorldMap({
                     style={{
                       default: {
                         fill,
-                        stroke: c.strokeDefault,
-                        strokeWidth: 0.4,
+                        stroke: ATLAS.stroke,
+                        strokeWidth: 0.35,
                         outline: 'none',
                         transition: 'fill 200ms ease',
                       },
                       hover: {
-                        fill: isSelected ? c.landSelected : c.landHover,
-                        stroke: c.strokeHover,
-                        strokeWidth: 0.6,
+                        fill: fillFor(name, isSelected, true),
+                        stroke: ATLAS.oceanStroke,
+                        strokeWidth: 0.5,
                         outline: 'none',
                         cursor: 'pointer',
                       },
                       pressed: {
-                        fill: c.landSelected,
+                        fill: ATLAS.selected,
                         outline: 'none',
                       },
                     }}
@@ -144,10 +118,10 @@ export default function WorldMap({
       </ComposableMap>
 
       {hovered && (
-        <div className="pointer-events-none absolute bottom-16 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink/85 px-4 py-1.5 text-sm font-medium text-white shadow-float">
+        <div className="pointer-events-none absolute bottom-16 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-black/75 px-4 py-1.5 text-sm font-medium text-white shadow-float">
           {hovered}
           {curatedNames.has(hovered) && (
-            <span className="ml-2 rounded-full bg-landActive px-2 py-0.5 text-[11px] font-semibold text-ink">
+            <span className="ml-2 rounded-full bg-[#f5c842] px-2 py-0.5 text-[11px] font-semibold text-[#1a1a1a]">
               Featured
             </span>
           )}
