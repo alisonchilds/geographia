@@ -136,6 +136,142 @@ export const CURATED: Record<string, CountryContent> = {
     ],
   },
 
+  France: {
+    name: 'France',
+    wikipediaTitle: 'French_architecture',
+    flagEmoji: '\u{1F1EB}\u{1F1F7}',
+    tagline: 'From Roman aqueducts to the Grand Projets',
+    heroImage: commons('Chateau de Chambord.jpg', 1400),
+    heroCredit: 'Ch\u00e2teau de Chambord \u2014 Wikimedia Commons',
+    intro:
+      'French architecture has repeatedly set the terms of European building, from the invention of the Gothic cathedral and the splendour of Versailles to the rational planning of Haussmann\u2019s Paris and the radical modernism of Le Corbusier. Across two millennia, France moved from Roman engineering to medieval stone craft, courtly classicism, Enlightenment clarity, and a twentieth-century avant-garde that still shapes how cities are designed worldwide.',
+    eras: [
+      {
+        id: 'gallo-roman',
+        period: 'c. 600 BCE \u2013 476 CE',
+        title: 'Gaul & Roman France',
+        text: 'Long before France, Celtic Gaul raised ritual landscapes such as the alignments at Carnac. Roman conquest brought cities, forums, and aqueducts in stone and concrete. The Maison Carr\u00e9e at N\u00eemes preserves a near-perfect Roman temple, while the Pont du Gard still carries an aqueduct across the Gardon \u2014 engineering that underpinned the urban life of Lugdunum, Lutetia, and dozens of provincial towns.',
+        media: [
+          { kind: 'image', src: commons('Carnac - alignements de Carnac - menhirs.jpg', 1200), caption: 'Megalithic alignments at Carnac, Brittany', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Maison Carrée in Nîmes (16).jpg', 1200), caption: 'Maison Carr\u00e9e, N\u00eemes (c. 2\u201310 CE)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Pont du Gard BLS.jpg', 1200), caption: 'Pont du Gard aqueduct (1st c. CE)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'early-christian',
+        period: 'c. 313 \u2013 800',
+        title: 'Early Christian & Merovingian',
+        text: 'Christianity reshaped the landscape with baptisteries, basilicas, and monasteries. The Baptist\u00e8re Saint-Jean at Poitiers is among the oldest surviving Christian buildings in France, while the royal abbey of Saint-Denis, rebuilt under the Carolingians, became the burial church of French kings and a laboratory for early rib vaulting.',
+        media: [
+          { kind: 'image', src: commons('Baptistère Saint-Jean de Poitiers.jpg', 1200), caption: 'Baptist\u00e8re Saint-Jean, Poitiers (4th\u20137th c.)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Basilica of St Denis, west facade.jpg', 1000), caption: 'Basilica of Saint-Denis (rebuilt from 7th c.)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'romanesque',
+        period: 'c. 1000 \u2013 1150',
+        title: 'Romanesque',
+        text: 'On pilgrimage routes to Santiago, France built hundreds of stone churches with thick walls, barrel vaults, and sculpted portals. Saint-Sernin at Toulouse stretches along an aisled basilica plan capped by a vast stone vault, while V\u00e9zelay\u2019s hilltop church stages biblical narrative in its tympanum and radiating chapels.',
+        media: [
+          { kind: 'image', src: commons('Basilique Saint-Sernin de Toulouse - exterieur.jpg', 1200), caption: 'Basilica of Saint-Sernin, Toulouse (11th\u201312th c.)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Vézelay Basilica.jpg', 1200), caption: 'Basilica of Sainte-Marie-Madeleine, V\u00e9zelay', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'gothic',
+        period: 'c. 1140 \u2013 1500',
+        title: 'Gothic',
+        text: 'Born in the \u00cele-de-France, Gothic architecture turned stone into light: pointed arches, rib vaults, and vast stained-glass windows. Chartres Cathedral refined the type in a single campaign of harmony, Notre-Dame de Paris stacked storeys of flying buttresses and rose windows, and the Sainte-Chapelle enclosed a jewel-box interior of almost pure glass.',
+        media: [
+          { kind: 'image', src: commons('Chartres Cathedral west façade.jpg', 1200), caption: 'Chartres Cathedral (begun 1194)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Notre Dame de Paris, western facade.jpg', 1200), caption: 'Notre-Dame de Paris (1163\u20131345)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Sainte-Chapelle - Upper level 2010.jpg', 1000), caption: 'Sainte-Chapelle, Paris (1241\u201348)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'renaissance',
+        period: 'c. 1490 \u2013 1600',
+        title: 'Renaissance',
+        text: 'French kings imported Italian classicism and fused it with medieval ch\u00e2teau planning. Chambord\u2019s double-helix stair and forest of chimneys dramatise royal power in the Loire Valley, while the Galerie François I at Fontainebleau launched the School of Fontainebleau \u2014 Mannerist painting and stucco woven into architecture.',
+        media: [
+          { kind: 'image', src: commons('Chateau de Chambord.jpg', 1200), caption: 'Ch\u00e2teau de Chambord (begun 1519)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Palace of Fontainebleau - Francis I Gallery 01.jpg', 1200), caption: 'Galerie François I, Fontainebleau (1528\u201334)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'baroque-classical',
+        period: 'c. 1600 \u2013 1750',
+        title: 'Baroque & French Classicism',
+        text: 'The absolute monarchy built at a scale to match its ambitions. Versailles turned a hunting lodge into Europe\u2019s grandest palace, aligning gardens, fountains, and the Hall of Mirrors on infinite axes. In Paris, the dome of Les Invalides and the Salon de la Princesse at the H\u00f4tel de Soubise show Baroque movement tempered by French clarity and etiquette.',
+        media: [
+          { kind: 'image', src: commons('Chateau Versailles Galerie des Glaces.jpg', 1200), caption: 'Hall of Mirrors, Palace of Versailles (1678\u20131684)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'rococo',
+        period: 'c. 1720 \u2013 1770',
+        title: 'Rococo',
+        text: 'Rococo softened Baroque grandeur into intimate curves, mirrors, and pastel ornament for aristocratic salons. The Salon de la Princesse at the H\u00f4tel de Soubise is a masterpiece of gilded boiserie, while provincial cities such as Nancy rebuilt their squares as unified ensembles of wrought iron, stone, and gilded gates.',
+        media: [
+          { kind: 'image', src: commons('Hôtel de Soubise - Salon de la Princesse 01.jpg', 1200), caption: 'Salon de la Princesse, H\u00f4tel de Soubise, Paris (1737\u201340)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'neoclassical',
+        period: 'c. 1750 \u2013 1830',
+        title: 'Neoclassical',
+        text: 'Enlightenment architects looked to antiquity for models of civic virtue. Soufflot\u2019s Panth\u00e9on reimagined a Roman temple as a secular monument to the nation, while the Madeleine and the Arc de Triomphe framed Paris with colossal classical forms. The style gave revolutionary and imperial France a shared architectural language of gravitas.',
+        media: [
+          { kind: 'image', src: commons('Panthéon Paris 1.jpg', 1200), caption: 'Panth\u00e9on, Paris (1758\u201390)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('La Madeleine, Paris 25 May 2013.jpg', 1000), caption: 'La Madeleine, Paris (consecrated 1842)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Arc de Triomphe, Paris 21 October 2010.jpg', 1000), caption: 'Arc de Triomphe, Paris (1806\u201336)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'haussmann',
+        period: 'c. 1850 \u2013 1914',
+        title: 'Haussmann & the 19th century',
+        text: 'Baron Haussmann cut wide boulevards through medieval Paris, standardising stone facades, zinc roofs, and public amenities that still define the city. Monumental theatres and stations followed: Garnier\u2019s Op\u00e9ra is a marble and gilt celebration of Second Empire taste, while the Eiffel Tower demonstrated iron\u2019s power to mark a modern nation at the 1889 Exposition.',
+        media: [
+          { kind: 'image', src: commons('Paris Opera full frontal view, May 2009.jpg', 1200), caption: 'Palais Garnier, Paris (1861\u201375)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Palais Garnier, Paris 30 January 2010.jpg', 1000), caption: 'Grand staircase, Palais Garnier', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'art-nouveau',
+        period: 'c. 1890 \u2013 1914',
+        title: 'Art Nouveau & Belle \u00c9poque',
+        text: 'At the turn of the century, Hector Guimard and the \u00c9cole de Nancy wrapped iron, glass, and tile in organic curves. Cast-iron M\u00e9tro entrances still signal Parisian modernity, while regional designers such as \u00c9mile Gall\u00e9 united furniture, stained glass, and architecture into a total decorative environment.',
+        media: [
+          { kind: 'image', src: commons('Entrée du métro Abbesses (Paris).jpg', 1000), caption: 'Guimard M\u00e9tro entrance, Abbesses, Paris', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'modern',
+        period: 'c. 1920 \u2013 1970',
+        title: 'Modernism',
+        text: 'Le Corbusier proposed the house as a machine for living and the city as a rational plan. Villa Savoye floats on pilotis with a ribbon window and roof garden, while the chapel at Ronchamp sculpts thick walls and a soaring concrete roof into spiritual drama. In Marseille, the Unit\u00e9 d\u2019habitation tested high-rise communal living; in Paris, the Centre Pompidou turned structure and services inside out.',
+        media: [
+          { kind: 'image', src: commons('Villa Savoye west facade.jpg', 1200), caption: 'Villa Savoye, Poissy (Le Corbusier, 1929\u201331)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Ronchamp Chapelle Notre Dame du Haut npa 1953.jpg', 1200), caption: 'Notre-Dame du Haut, Ronchamp (Le Corbusier, 1955)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons("Unité d'habitation de Marseille.jpg", 1000), caption: 'Unit\u00e9 d\u2019habitation, Marseille (1947\u201352)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Centre Pompidou 2012.jpg', 1000), caption: 'Centre Pompidou, Paris (1977)', credit: 'Wikimedia Commons' },
+        ],
+      },
+      {
+        id: 'contemporary',
+        period: '1970 \u2013 present',
+        title: 'Contemporary',
+        text: 'Presidents from Mitterrand to Macron sponsored grands projets that mixed heritage with bold new forms. I. M. Pei\u2019s glass pyramid reframed the Louvre courtyard, Jean Nouvel\u2019s Fondation Louis Vuitton folded sails of glass above the Bois de Boulogne, and La Grande Arche at La D\u00e9fense completed a modern axis to the west of Paris.',
+        media: [
+          { kind: 'image', src: commons('Louvre Pyramid at night 2017.jpg', 1200), caption: 'Louvre Pyramid, Paris (I. M. Pei, 1989)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Fondation Louis Vuitton, Paris 22 October 2014.jpg', 1200), caption: 'Fondation Louis Vuitton, Paris (Jean Nouvel, 2014)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Grande Arche de la Défense.jpg', 1000), caption: 'Grande Arche de la D\u00e9fense (1989)', credit: 'Wikimedia Commons' },
+        ],
+      },
+    ],
+  },
+
   Japan: {
     name: 'Japan',
     wikipediaTitle: 'Japanese_architecture',
