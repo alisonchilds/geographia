@@ -20,12 +20,13 @@ body,
 body {
   font-family: theme('fontFamily.sans');
   color: theme('colors.ink');
+  background: #1a1a1a;
   overflow: hidden;
 }
 
 html.dark body {
   color: #e5e7eb;
-  background: #0b1220;
+  background: #1a1a1a;
 }
 
 /* Wikipedia-style article typography for fetched HTML */
