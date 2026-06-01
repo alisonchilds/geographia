@@ -199,7 +199,7 @@ export default function CountryPanel({
                 {/* Hero */}
                 <header className="relative">
                   {data.heroImage ? (
-                    <div className="relative h-44 w-full md:h-52">
+                    <div className="relative h-60 w-full md:h-52">
                       <SmartImage src={data.heroImage} alt={data.name} className="h-full w-full" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
                     </div>
@@ -298,7 +298,7 @@ export default function CountryPanel({
 function PanelSkeleton({ name }: { name: string | null }) {
   return (
     <div>
-      <div className="relative h-44 w-full overflow-hidden bg-neutral-200 md:h-52 dark:bg-neutral-800">
+      <div className="relative h-60 w-full overflow-hidden bg-neutral-200 md:h-52 dark:bg-neutral-800">
         <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 to-transparent" />
         <div className="absolute bottom-4 left-4">
           <div className="font-serif text-2xl font-bold text-white drop-shadow">{name}</div>
@@ -308,9 +308,9 @@ function PanelSkeleton({ name }: { name: string | null }) {
         {[...Array(6)].map((_, i) => (
           <div key={i} className="h-3.5 w-full rounded bg-neutral-200 dark:bg-neutral-800" style={{ width: `${90 - i * 7}%` }} />
         ))}
-        <div className="mt-4 grid grid-cols-2 gap-3">
-          <div className="aspect-[4/3] rounded-lg bg-neutral-200 dark:bg-neutral-800" />
-          <div className="aspect-[4/3] rounded-lg bg-neutral-200 dark:bg-neutral-800" />
+        <div className="mt-4 grid grid-cols-1 gap-3">
+          <div className="aspect-[16/10] rounded-lg bg-neutral-200 dark:bg-neutral-800" />
+          <div className="aspect-[16/10] rounded-lg bg-neutral-200 dark:bg-neutral-800" />
         </div>
       </div>
     </div>

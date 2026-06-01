@@ -12,6 +12,11 @@ export default function UnsplashGallery({ photos = [], loading = false }: Unspla
   if (!isUnsplashEnabled) return null;
   if (!loading && photos.length === 0) return null;
 
+  const gridClass =
+    'grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-2';
+  const cellClass =
+    'group relative aspect-[4/3] overflow-hidden rounded-lg bg-neutral-200 md:aspect-square dark:bg-neutral-800';
+
   return (
     <section className="mt-6 border-t border-neutral-200 pt-5 dark:border-neutral-800">
       <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-landActive">
@@ -22,26 +27,26 @@ export default function UnsplashGallery({ photos = [], loading = false }: Unspla
       </h3>
 
       {loading ? (
-        <div className="grid grid-cols-3 gap-2">
+        <div className={gridClass}>
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="relative aspect-square overflow-hidden rounded-lg bg-neutral-200 dark:bg-neutral-800">
+            <div key={i} className={cellClass}>
               <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/60 to-transparent" />
             </div>
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-3 gap-2">
+        <div className={gridClass}>
           {photos.map((p) => (
             <a
               key={p.id}
               href={p.photoLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative aspect-square overflow-hidden rounded-lg bg-neutral-200"
+              className={cellClass}
               title={p.alt}
             >
               <img
-                src={p.thumb}
+                src={p.gallery}
                 alt={p.alt}
                 loading="lazy"
                 className="h-full w-full object-cover transition duration-300 group-hover:scale-105"

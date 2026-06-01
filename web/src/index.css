@@ -59,6 +59,14 @@ html.dark .wiki-html h3 {
   padding-left: 1.4rem;
   margin: 0 0 0.85rem;
 }
+.wiki-html img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
 /* Hide noisy Wikipedia chrome that doesn't render well out of context */
 .wiki-html .mw-editsection,
 .wiki-html .reference,

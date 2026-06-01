@@ -12,7 +12,8 @@ interface ArticleSectionProps {
 function Figure({ media, large }: { media: Media; large?: boolean }) {
   const caption = media.caption;
   const credit = media.credit;
-  const aspect = large ? 'aspect-[16/10]' : 'aspect-[4/3]';
+  // Taller frames on small screens; desktop keeps the denser grid ratios.
+  const aspect = large ? 'aspect-[16/10]' : 'aspect-[16/10] md:aspect-[4/3]';
 
   let visual: React.ReactNode = null;
   if (media.kind === 'image') {
@@ -56,8 +57,8 @@ export default function ArticleSection({ era, wide = false, extraMedia = [] }: A
   // full width (50/50) instead of leaving an empty third column when expanded.
   const maxCols = wide ? 3 : 2;
   const colCount = Math.min(media.length, maxCols);
-  const cols =
-    colCount >= 3 ? 'grid-cols-3' : colCount === 2 ? 'grid-cols-2' : 'grid-cols-1';
+  const desktopCols =
+    colCount >= 3 ? 'md:grid-cols-3' : colCount === 2 ? 'md:grid-cols-2' : 'md:grid-cols-1';
   const largeImages = colCount <= 2;
   return (
     <motion.section
@@ -75,7 +76,7 @@ export default function ArticleSection({ era, wide = false, extraMedia = [] }: A
       <p className="mb-4 text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-300">{era.text}</p>
 
       {media.length > 0 && (
-        <div className={`grid gap-4 ${cols}`}>
+        <div className={`grid grid-cols-1 gap-4 ${desktopCols}`}>
           {media.map((m, i) => (
             <Figure key={i} media={m} large={largeImages} />
           ))}

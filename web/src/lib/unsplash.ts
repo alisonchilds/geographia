@@ -13,7 +13,8 @@ export const isUnsplashEnabled = Boolean(ACCESS_KEY);
 
 export interface UnsplashPhoto {
   id: string;
-  thumb: string; // small square for the gallery grid
+  thumb: string; // small square for the desktop gallery grid
+  gallery: string; // landscape crop for the mobile gallery grid
   regular: string; // high-res, retina-friendly for in-article images
   alt: string;
   photoLink: string;
@@ -70,6 +71,7 @@ export async function searchUnsplash(
     return (data.results || []).map((p) => ({
       id: p.id,
       thumb: sized(p.urls.raw, 400, { square: true }),
+      gallery: sized(p.urls.raw, 640),
       regular: sized(p.urls.raw, 900),
       alt: p.alt_description || query,
       photoLink: `${p.links.html}${UTM}`,
