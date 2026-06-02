@@ -149,11 +149,10 @@ export default function GlobeMapGL({
             const topology = await fetch(GEO_URL).then((r) => r.json());
             if (cancelled) return;
 
-            const fc = prepareCountriesForGlobe(
-              feature(topology, topology.objects.countries) as FeatureCollection,
-            );
+            const rawFc = feature(topology, topology.objects.countries) as FeatureCollection;
+            const fc = prepareCountriesForGlobe(rawFc);
             const centroids: Record<string, [number, number]> = {};
-            for (const f of fc.features) {
+            for (const f of rawFc.features) {
               const name = (f.properties as { name?: string } | null)?.name;
               if (!name) continue;
               centroids[name] = geoCentroid(f) as [number, number];

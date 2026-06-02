@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "antimeridian-ts": "^0.1.2",
     "d3-geo": "^3.1.1",
     "framer-motion": "^12.40.0",
     "mapbox-gl": "^3.24.0",

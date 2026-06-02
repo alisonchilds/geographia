@@ -1,4 +1,3 @@
-import { fixGeoJson } from 'antimeridian-ts';
 import type { FeatureCollection, Geometry, MultiPolygon, Polygon, Position } from 'geojson';
 
 // Web Mercator / globe rendering breaks down beyond these latitudes and draws
@@ -111,14 +110,7 @@ function clampGeometry(geometry: Geometry): Geometry {
 }
 
 function fixAntimeridian(geometry: Geometry): Geometry {
-  const split = splitGeometryAtDateline(geometry);
-  try {
-    const fixed = fixGeoJson({ type: 'Feature', properties: {}, geometry: split });
-    if (fixed.type === 'Feature') return fixed.geometry;
-  } catch {
-    /* fall through — Antarctica pole rings */
-  }
-  return split;
+  return splitGeometryAtDateline(geometry);
 }
 
 /** Prepare Natural Earth country shapes for Mapbox / MapLibre globe rendering. */
