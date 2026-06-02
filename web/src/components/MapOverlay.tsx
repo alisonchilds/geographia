@@ -19,6 +19,13 @@ interface MapOverlayProps {
 // never covers too much of the map.
 const FEATURED_LIMIT = 5;
 
+// Shared dark-mode chrome for floating map controls.
+const overlayDark =
+  'dark:bg-overlayDark/95 dark:text-neutral-100 dark:shadow-float-dark dark:ring-1 dark:ring-white/10';
+const overlayDarkSolid =
+  'dark:bg-overlayDark dark:ring-1 dark:ring-white/10 dark:shadow-float-dark';
+const overlayDarkHover = 'dark:hover:bg-overlayDarkHover';
+
 export default function MapOverlay({
   countryNames,
   curatedNames,
@@ -76,7 +83,7 @@ export default function MapOverlay({
           align with the info panel's left edge and max width. */}
       <div className="pointer-events-none absolute inset-x-3 top-4 z-40 md:inset-x-auto md:left-3 md:w-[min(420px,calc(100%-1.5rem))]">
         <div className="pointer-events-auto relative">
-          <div className="flex items-center gap-2.5 rounded-2xl bg-white/95 py-2 pl-3 pr-3 shadow-float backdrop-blur dark:bg-neutral-900/95">
+          <div className={`flex items-center gap-2.5 rounded-2xl bg-white/95 py-2 pl-3 pr-3 shadow-float backdrop-blur ${overlayDark}`}>
             <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-landActive text-lg">
               {'\u{1F3DB}\u{FE0F}'}
             </div>
@@ -108,7 +115,7 @@ export default function MapOverlay({
           </div>
 
           {showList && (
-            <div className="absolute mt-1 max-h-[60vh] w-full overflow-auto rounded-xl bg-white py-1 shadow-panel dark:bg-neutral-900">
+            <div className={`absolute mt-1 max-h-[60vh] w-full overflow-auto rounded-xl bg-white py-1 shadow-panel ${overlayDarkSolid}`}>
               {!isSearching && (
                 <div className="flex items-center justify-between px-3 py-1.5">
                   <span className="text-[11px] font-semibold uppercase tracking-wide text-neutral-400">
@@ -118,7 +125,7 @@ export default function MapOverlay({
                     onMouseDown={(e) => e.preventDefault()}
                     onClick={() => setDismissed(true)}
                     aria-label="Hide featured places"
-                    className="flex h-6 w-6 items-center justify-center rounded-full text-neutral-400 transition hover:bg-neutral-100 hover:text-ink dark:hover:bg-neutral-800 dark:hover:text-neutral-100"
+                    className={`flex h-6 w-6 items-center justify-center rounded-full text-neutral-400 transition hover:bg-neutral-100 hover:text-ink ${overlayDarkHover} dark:hover:text-neutral-100`}
                   >
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none">
                       <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
@@ -134,9 +141,9 @@ export default function MapOverlay({
                       <button
                         onMouseDown={(e) => e.preventDefault()}
                         onClick={() => choose(name)}
-                        className="flex w-full items-center gap-3 px-3 py-2 text-left hover:bg-neutral-100 dark:hover:bg-neutral-800"
+                        className={`flex w-full items-center gap-3 px-3 py-2 text-left hover:bg-neutral-100 ${overlayDarkHover}`}
                       >
-                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-lg dark:bg-neutral-800">
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-lg dark:bg-overlayDarkHover">
                           {curated?.flagEmoji ?? '\u{1F4CD}'}
                         </span>
                         <span className="min-w-0 flex-1">
@@ -168,7 +175,7 @@ export default function MapOverlay({
           onClick={toggleMapRenderer}
           aria-label={mapRenderer === 'globe' ? 'Switch to flat map' : 'Try 3D globe'}
           title={mapRenderer === 'globe' ? 'Flat map' : '3D globe (MapLibre)'}
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-ink shadow-float backdrop-blur hover:bg-neutral-100 dark:bg-neutral-900/95 dark:text-neutral-100 dark:hover:bg-neutral-800"
+          className={`flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-ink shadow-float backdrop-blur hover:bg-neutral-100 ${overlayDark} ${overlayDarkHover}`}
         >
           {mapRenderer === 'globe' ? (
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -191,7 +198,7 @@ export default function MapOverlay({
           onClick={toggleTheme}
           aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}
           title={dark ? 'Light mode' : 'Dark mode'}
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-ink shadow-float backdrop-blur hover:bg-neutral-100 dark:bg-neutral-900/95 dark:text-neutral-100 dark:hover:bg-neutral-800"
+          className={`flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-ink shadow-float backdrop-blur hover:bg-neutral-100 ${overlayDark} ${overlayDarkHover}`}
         >
           {dark ? (
             // Sun: click to go light
@@ -217,19 +224,19 @@ export default function MapOverlay({
           )}
         </button>
 
-        <div className="flex flex-col overflow-hidden rounded-xl bg-white/95 shadow-float backdrop-blur dark:bg-neutral-900/95">
+        <div className={`flex flex-col overflow-hidden rounded-xl bg-white/95 shadow-float backdrop-blur ${overlayDark}`}>
           <button
             onClick={onZoomIn}
             aria-label="Zoom in"
-            className="flex h-10 w-10 items-center justify-center text-xl text-ink hover:bg-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-800"
+            className={`flex h-10 w-10 items-center justify-center text-xl text-ink hover:bg-neutral-100 dark:text-neutral-100 ${overlayDarkHover}`}
           >
             +
           </button>
-          <div className="mx-auto h-px w-6 bg-neutral-200 dark:bg-neutral-700" />
+          <div className="mx-auto h-px w-6 bg-neutral-200 dark:bg-white/10" />
           <button
             onClick={onZoomOut}
             aria-label="Zoom out"
-            className="flex h-10 w-10 items-center justify-center text-xl text-ink hover:bg-neutral-100 dark:text-neutral-100 dark:hover:bg-neutral-800"
+            className={`flex h-10 w-10 items-center justify-center text-xl text-ink hover:bg-neutral-100 dark:text-neutral-100 ${overlayDarkHover}`}
           >
             {'\u2212'}
           </button>
@@ -238,7 +245,7 @@ export default function MapOverlay({
           onClick={onReset}
           aria-label="Reset view"
           title="Reset view"
-          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-ink shadow-float backdrop-blur hover:bg-neutral-100 dark:bg-neutral-900/95 dark:text-neutral-100 dark:hover:bg-neutral-800"
+          className={`flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-ink shadow-float backdrop-blur hover:bg-neutral-100 ${overlayDark} ${overlayDarkHover}`}
         >
           {/* Recenter / locate target */}
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

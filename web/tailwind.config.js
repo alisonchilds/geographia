@@ -21,10 +21,14 @@ export default {
         landHover: '#d9cfba',
         landActive: '#c9a86a',
         ink: '#202122',
+        // Dark-mode floating panels — darker than the map (#1a1a1a) for contrast.
+        overlayDark: '#0c0c0c',
+        overlayDarkHover: '#181818',
       },
       boxShadow: {
         panel: '0 10px 40px -8px rgba(0,0,0,0.35)',
         float: '0 2px 12px rgba(0,0,0,0.18)',
+        'float-dark': '0 2px 16px rgba(0,0,0,0.55)',
       },
       keyframes: {
         shimmer: {
