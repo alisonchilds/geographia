@@ -143,7 +143,7 @@ export default function App() {
 
       {/* First-run hint — hidden while hovering a country so it never covers the label */}
       {!open && !hoveredCountry && countryNames.length > 0 && (
-        <div className="pointer-events-none absolute bottom-6 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink/80 px-4 py-2 text-sm text-white shadow-float dark:bg-overlayDark/95 dark:shadow-float-dark dark:ring-1 dark:ring-white/10">
+        <div className="pointer-events-none absolute bottom-6 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink/80 px-4 py-2 text-sm text-white shadow-float dark:bg-overlayDark dark:shadow-float-dark dark:ring-1 dark:ring-white/15">
           Click a country to explore its architecture
         </div>
       )}

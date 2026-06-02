@@ -22,8 +22,8 @@ export default {
         landActive: '#c9a86a',
         ink: '#202122',
         // Dark-mode floating panels — darker than the map (#1a1a1a) for contrast.
-        overlayDark: '#0c0c0c',
-        overlayDarkHover: '#181818',
+        overlayDark: '#080808',
+        overlayDarkHover: '#141414',
       },
       boxShadow: {
         panel: '0 10px 40px -8px rgba(0,0,0,0.35)',

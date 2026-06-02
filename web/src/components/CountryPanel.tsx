@@ -155,7 +155,7 @@ export default function CountryPanel({
           exit="hidden"
           variants={variants}
           transition={{ type: 'spring', stiffness: 320, damping: 34 }}
-          className={`absolute z-30 flex flex-col overflow-hidden bg-white shadow-panel transition-[width] duration-300 ease-out dark:bg-overlayDark dark:shadow-[0_10px_40px_-8px_rgba(0,0,0,0.65)] dark:ring-1 dark:ring-white/10 ${positionClass}`}
+          className={`absolute z-30 flex flex-col overflow-hidden bg-white shadow-panel transition-[width] duration-300 ease-out dark:bg-overlayDark dark:shadow-[0_10px_40px_-8px_rgba(0,0,0,0.65)] dark:ring-1 dark:ring-white/15 ${positionClass}`}
         >
           <div ref={scrollRef} className="panel-scroll relative flex-1 overflow-y-auto">
             {/* Expand + close buttons. Zero-height sticky row pinned just below
@@ -167,7 +167,7 @@ export default function CountryPanel({
                     onClick={() => setExpanded((e) => !e)}
                     aria-label={expanded ? 'Collapse panel' : 'Expand panel'}
                     title={expanded ? 'Collapse' : 'Expand'}
-                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-overlayDarkHover/95 dark:text-neutral-100 dark:ring-1 dark:ring-white/10 dark:hover:bg-overlayDarkHover"
+                    className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-overlayDarkHover dark:text-neutral-100 dark:ring-1 dark:ring-white/15 dark:hover:bg-neutral-950"
                   >
                     {expanded ? (
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -183,7 +183,7 @@ export default function CountryPanel({
                 <button
                   onClick={onClose}
                   aria-label="Close"
-                  className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-neutral-800/90 dark:text-neutral-100 dark:hover:bg-neutral-700"
+                  className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-overlayDarkHover dark:text-neutral-100 dark:ring-1 dark:ring-white/15 dark:hover:bg-neutral-950"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                     <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
@@ -241,7 +241,7 @@ export default function CountryPanel({
 
                 {/* Sticky table of contents */}
                 {toc.length > 0 && (
-                  <nav className="sticky top-0 z-10 flex gap-2 overflow-x-auto border-b border-neutral-200 bg-white/95 px-4 py-2 backdrop-blur dark:border-white/10 dark:bg-overlayDark/95 dark:ring-1 dark:ring-inset dark:ring-white/5">
+                  <nav className="sticky top-0 z-10 flex gap-2 overflow-x-auto border-b border-neutral-200 bg-white/95 px-4 py-2 backdrop-blur dark:border-white/10 dark:bg-overlayDark dark:ring-1 dark:ring-inset dark:ring-white/5">
                     {toc.map((t) => (
                       <button
                         key={t.id}

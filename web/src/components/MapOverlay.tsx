@@ -21,9 +21,9 @@ const FEATURED_LIMIT = 5;
 
 // Shared dark-mode chrome for floating map controls.
 const overlayDark =
-  'dark:bg-overlayDark/95 dark:text-neutral-100 dark:shadow-float-dark dark:ring-1 dark:ring-white/10';
+  'dark:bg-overlayDark dark:text-neutral-100 dark:shadow-float-dark dark:ring-1 dark:ring-white/15';
 const overlayDarkSolid =
-  'dark:bg-overlayDark dark:ring-1 dark:ring-white/10 dark:shadow-float-dark';
+  'dark:bg-overlayDark dark:ring-1 dark:ring-white/15 dark:shadow-float-dark';
 const overlayDarkHover = 'dark:hover:bg-overlayDarkHover';
 
 export default function MapOverlay({
