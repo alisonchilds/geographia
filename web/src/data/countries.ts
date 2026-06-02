@@ -180,7 +180,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: imageSrc('Poitiers - Baptistère Saint-Jean - 01.jpg', 1200), caption: 'Baptist\u00e8re Saint-Jean, Poitiers (4th\u20137th c.)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Saint-Denis - Façade.jpg', 1000), caption: 'Basilica of Saint-Denis (rebuilt from 7th c.)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Abbaye de Cluny ruins.jpg', 1200), caption: 'Abbey of Cluny (ruins), Burgundy', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Abbaye de Cluny.jpg', 1200), caption: 'Abbey of Cluny (ruins), Burgundy', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -191,7 +191,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: imageSrc('Basilique Saint-Sernin de Toulouse - exposition ouest-1-.jpg', 1200), caption: 'Basilica of Saint-Sernin, Toulouse (11th\u201312th c.)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Vezelay-7776-Bearbeitet.jpg', 1200), caption: 'Basilica of Sainte-Marie-Madeleine, V\u00e9zelay', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Abbey Church of Sainte-Foy Conques.jpg', 1200), caption: 'Abbey Church of Sainte-Foy, Conques', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Conques - Abbatiale Sainte-Foy - 01.jpg', 1200), caption: 'Abbey Church of Sainte-Foy, Conques', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -203,7 +203,7 @@ export const CURATED: Record<string, CountryContent> = {
           { kind: 'image', src: imageSrc('Notre Dame de Chartres.jpg', 1200), caption: 'Chartres Cathedral (begun 1194)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('NotreDameDeParis.jpg', 1200), caption: 'Notre-Dame de Paris (1163\u20131345)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Sainte Chapelle - Upper level 1.jpg', 1000), caption: 'Sainte-Chapelle, Paris (1241\u201348)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Reims Cathedral facade.jpg', 1200), caption: 'Reims Cathedral facade', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Facade of Reims Cathedral.jpg', 1200), caption: 'Reims Cathedral facade', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -225,7 +225,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: imageSrc('Versailles Galerie des glaces.jpg', 1200), caption: 'Hall of Mirrors, Palace of Versailles (1678\u20131684)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Palace of Versailles June 2010.jpg', 1200), caption: 'Palace of Versailles, west facade', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Dome des Invalides Paris.jpg', 1200), caption: 'Dôme des Invalides, Paris (1677–1706)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('South facade of Dôme des Invalides.jpg', 1200), caption: 'Dôme des Invalides, Paris (1677–1706)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -235,8 +235,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'Rococo softened Baroque grandeur into intimate curves, mirrors, and pastel ornament for aristocratic salons. The Salon de la Princesse at the H\u00f4tel de Soubise is a masterpiece of gilded boiserie, while provincial cities such as Nancy rebuilt their squares as unified ensembles of wrought iron, stone, and gilded gates.',
         media: [
           { kind: 'image', src: imageSrc('Salon ovale de la princesse in the Hôtel de Soubise (02).jpg', 1200), caption: 'Salon de la Princesse, H\u00f4tel de Soubise, Paris (1737\u201340)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Place Stanislas in Nancy.jpg', 1200), caption: 'Place Stanislas, Nancy (1752–60)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Petit Trianon 2006.jpg', 1200), caption: 'Petit Trianon, Versailles (1762–68)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Place Stanislas, Nancy.jpg', 1200), caption: 'Place Stanislas, Nancy (1752–60)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Petit Trianon - Façades sud et est.jpg', 1200), caption: 'Petit Trianon, Versailles (1762–68)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -259,7 +259,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: imageSrc('Paris Opera full frontal architecture, May 2009.jpg', 1200), caption: 'Palais Garnier, Paris (1861\u201375)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Opera Garnier Grand Escalier.jpg', 1000), caption: 'Grand staircase, Palais Garnier', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Eiffel Tower from Tour Montparnasse 2013.jpg', 1200), caption: 'Eiffel Tower and Haussmann Paris (1889)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Eiffel Tower from Montparnasse Tower, May 2022.jpg', 1200), caption: 'Eiffel Tower and Haussmann Paris (1889)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -269,8 +269,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'At the turn of the century, Hector Guimard and the \u00c9cole de Nancy wrapped iron, glass, and tile in organic curves. Cast-iron M\u00e9tro entrances still signal Parisian modernity, while regional designers such as \u00c9mile Gall\u00e9 united furniture, stained glass, and architecture into a total decorative environment.',
         media: [
           { kind: 'image', src: imageSrc('Paris (75018) Métro Abbesses Édicule Guimard.jpg', 1000), caption: 'Guimard M\u00e9tro entrance, Abbesses, Paris', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Paris Castel Beranger.jpg', 1200), caption: 'Castel Béranger, Paris (Guimard, 1895–98)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Paris Metro Porte Dauphine.jpg', 1200), caption: 'Guimard Métro entrance, Porte Dauphine, Paris', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Castel Béranger Paris.jpg', 1200), caption: 'Castel Béranger, Paris (Guimard, 1895–98)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Paris Metro 2 Porte Dauphine Libellule.JPG', 1200), caption: 'Guimard Métro entrance, Porte Dauphine, Paris', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -281,14 +281,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: imageSrc('Villa Savoye (8237925975).jpg', 1200), caption: 'Villa Savoye, Poissy (Le Corbusier, 1929\u201331)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Chapelle Notre-Dame-du Haut 04.jpg', 1200), caption: 'Notre-Dame du Haut, Ronchamp (Le Corbusier, 1955)', credit: 'Wikimedia Commons' },
-          {
-            kind: 'image',
-            src: imageSrc(
-              'https://upload.wikimedia.org/wikipedia/en/6/66/Marseille_-_Cit%C3%A9_Radieuse_%2816234847979%29.jpg',
-            ),
-            caption: 'Unit\u00e9 d\u2019habitation, Marseille (1947\u201352)',
-            credit: 'Wikimedia Commons',
-          },
+          { kind: 'image', src: imageSrc('Le Corbusier, La Cité Radieuse, Marseille.jpg', 1200), caption: 'Unit\u00e9 d\u2019habitation, Marseille (1947\u201352)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('0 Centre Georges-Pompidou - 1986 Paris.JPG', 1000), caption: 'Centre Pompidou, Paris (1977)', credit: 'Wikimedia Commons' },
         ],
       },
