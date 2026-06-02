@@ -1,11 +1,14 @@
 import { useMemo, useState } from 'react';
 import { CURATED } from '../data/countries';
+import { toggleMapRenderer } from '../lib/mapRenderer';
+import type { MapRenderer } from '../lib/mapTypes';
 import { toggleTheme, useIsDark } from '../lib/theme';
 
 interface MapOverlayProps {
   countryNames: string[];
   curatedNames: Set<string>;
   panelOpen: boolean;
+  mapRenderer: MapRenderer;
   onSearchSelect: (name: string) => void;
   onZoomIn: () => void;
   onZoomOut: () => void;
@@ -20,6 +23,7 @@ export default function MapOverlay({
   countryNames,
   curatedNames,
   panelOpen,
+  mapRenderer,
   onSearchSelect,
   onZoomIn,
   onZoomOut,
@@ -160,6 +164,29 @@ export default function MapOverlay({
 
       {/* Zoom + view controls, bottom-right */}
       <div className="absolute bottom-6 right-4 z-40 flex flex-col gap-2">
+        <button
+          onClick={toggleMapRenderer}
+          aria-label={mapRenderer === 'globe' ? 'Switch to flat map' : 'Try 3D globe'}
+          title={mapRenderer === 'globe' ? 'Flat map' : '3D globe (MapLibre)'}
+          className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-ink shadow-float backdrop-blur hover:bg-neutral-100 dark:bg-neutral-900/95 dark:text-neutral-100 dark:hover:bg-neutral-800"
+        >
+          {mapRenderer === 'globe' ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="6" width="16" height="12" rx="1.5" stroke="currentColor" strokeWidth="2" />
+              <path d="M4 10h16M8 6v12M16 6v12" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2" />
+              <path
+                d="M4 12h16M12 4c-2.5 2.8-2.5 13.2 0 16M12 4c2.5 2.8 2.5 13.2 0 16"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              />
+            </svg>
+          )}
+        </button>
+
         <button
           onClick={toggleTheme}
           aria-label={dark ? 'Switch to light mode' : 'Switch to dark mode'}

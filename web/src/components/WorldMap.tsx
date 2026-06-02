@@ -13,10 +13,7 @@ import { ATLAS, getAtlasLandFill } from '../lib/mapPalette';
 // Pages subpath (/geographia/) in production and at root ('/') during dev.
 const GEO_URL = `${import.meta.env.BASE_URL}countries-110m.json`;
 
-export interface MapPosition {
-  coordinates: [number, number];
-  zoom: number;
-}
+import type { MapPosition } from '../lib/mapTypes';
 
 interface WorldMapProps {
   selectedCountry: string | null;
@@ -131,3 +128,5 @@ export default function WorldMap({
     </div>
   );
 }
+
+export type { MapPosition } from '../lib/mapTypes';

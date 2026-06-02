@@ -1,12 +1,16 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { feature } from 'topojson-client';
 import { geoCentroid } from 'd3-geo';
-import WorldMap, { type MapPosition } from './components/WorldMap';
+import WorldMap from './components/WorldMap';
 import MapOverlay from './components/MapOverlay';
 import CountryPanel from './components/CountryPanel';
 import { CURATED } from './data/countries';
 import { loadCountry } from './lib/wikipedia';
+import { useMapRenderer } from './lib/mapRenderer';
+import type { MapPosition } from './lib/mapTypes';
 import type { PanelData } from './types';
+
+const GlobeMapGL = lazy(() => import('./components/GlobeMapGL'));
 
 // Prefixed with Vite's base URL so it resolves under the GitHub Pages
 // subpath (/geographia/) in production and at root ('/') during dev.
@@ -23,6 +27,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
+  const mapRenderer = useMapRenderer();
 
   const [countryNames, setCountryNames] = useState<string[]>([]);
   const centroidsRef = useRef<Record<string, [number, number]>>({});
@@ -95,19 +100,33 @@ export default function App() {
 
   return (
     <div className="relative h-full w-full overflow-hidden">
-      <WorldMap
-        selectedCountry={selected}
-        curatedNames={CURATED_NAMES}
-        position={position}
-        onSelectCountry={selectCountry}
-        onMoveEnd={setPosition}
-        onHoverChange={setHoveredCountry}
-      />
+      {mapRenderer === 'globe' ? (
+        <Suspense fallback={null}>
+          <GlobeMapGL
+            selectedCountry={selected}
+            curatedNames={CURATED_NAMES}
+            position={position}
+            onSelectCountry={selectCountry}
+            onMoveEnd={setPosition}
+            onHoverChange={setHoveredCountry}
+          />
+        </Suspense>
+      ) : (
+        <WorldMap
+          selectedCountry={selected}
+          curatedNames={CURATED_NAMES}
+          position={position}
+          onSelectCountry={selectCountry}
+          onMoveEnd={setPosition}
+          onHoverChange={setHoveredCountry}
+        />
+      )}
 
       <MapOverlay
         countryNames={countryNames}
         curatedNames={CURATED_NAMES}
         panelOpen={open}
+        mapRenderer={mapRenderer}
         onSearchSelect={handleSearchSelect}
         onZoomIn={zoomIn}
         onZoomOut={zoomOut}

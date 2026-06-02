@@ -1,4 +1,6 @@
 // Flat “architectural atlas” palette inspired by stylized globe illustrations.
+import type { ExpressionSpecification } from 'maplibre-gl';
+
 export const ATLAS = {
   background: '#1a1a1a',
   ocean: '#2060a8',
@@ -54,4 +56,31 @@ export function getAtlasLandFill(
   }
   const tone = getAtlasLandTone(countryName);
   return state === 'hover' ? ATLAS.landHover[tone] : ATLAS.land[tone];
+}
+
+function buildMatchExpression(
+  colorMap: Record<AtlasLandTone, string>,
+  defaultColor: string,
+): ExpressionSpecification {
+  const pairs: (string | ExpressionSpecification)[] = [];
+  for (const name of WHITE) pairs.push(name, colorMap.white);
+  for (const name of TAN) pairs.push(name, colorMap.tan);
+  return ['match', ['get', 'name'], ...pairs, defaultColor] as unknown as ExpressionSpecification;
+}
+
+/** MapLibre `fill-color` expression mirroring the SVG atlas palette. */
+export function buildAtlasFillColorExpression(): ExpressionSpecification {
+  return [
+    'case',
+    ['boolean', ['feature-state', 'selected'], false],
+    [
+      'case',
+      ['boolean', ['feature-state', 'hover'], false],
+      ATLAS.landHover.red,
+      ATLAS.land.red,
+    ],
+    ['boolean', ['feature-state', 'hover'], false],
+    buildMatchExpression(ATLAS.landHover, ATLAS.landHover.green),
+    buildMatchExpression(ATLAS.land, ATLAS.land.green),
+  ];
 }

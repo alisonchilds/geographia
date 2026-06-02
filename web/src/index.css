@@ -99,3 +99,11 @@ html.dark .panel-scroll {
 html.dark .panel-scroll::-webkit-scrollbar-thumb {
   background: rgba(120, 125, 135, 0.35);
 }
+
+.maplibregl-map {
+  font-family: inherit;
+}
+
+.maplibregl-canvas {
+  outline: none;
+}
