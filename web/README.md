@@ -68,6 +68,24 @@ Without a key the gallery simply doesn't render, and everything else works norma
 sources, in order of preference: curated Wikimedia Commons (always on), live Wikipedia
 images (for non-curated countries), and Unsplash (when a key is set).
 
+### Mapbox token (3D globe)
+
+The globe toggle uses [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/) when a token
+is configured (falls back to MapLibre otherwise):
+
+1. Create a token at [account.mapbox.com/access-tokens](https://account.mapbox.com/access-tokens).
+2. Add to `web/.env.local`:
+
+   ```bash
+   VITE_MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
+   ```
+
+3. For GitHub Pages, add the same value as a repository secret named
+   `VITE_MAPBOX_ACCESS_TOKEN` (Settings → Secrets → Actions).
+
+Without a token the globe still works via MapLibre, but Mapbox provides better atmosphere
+rendering. The globe ocean uses a light blue (`#aadaff`) matching the flat map palette.
+
 #### Keeping the key safe
 
 - **Never commit it.** `.env`, `.env.local`, and `.env.*` are gitignored (only

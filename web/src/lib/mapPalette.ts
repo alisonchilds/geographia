@@ -4,6 +4,8 @@ import type { ExpressionSpecification } from 'maplibre-gl';
 export const ATLAS = {
   background: '#1a1a1a',
   ocean: '#2060a8',
+  /** Lighter blue for the Mapbox/MapLibre globe sphere surface. */
+  globeOcean: '#aadaff',
   oceanStroke: '#184d88',
   land: {
     red: '#ff204e',
