@@ -550,7 +550,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Pyramids of the Giza Necropolis.jpg', 1200), caption: 'The pyramids of Giza, c. 2580\u20132510 BCE', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Egypt.Giza.Sphinx.01.jpg', 1000), caption: 'The Great Sphinx of Giza', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Red Pyramid Dahshur.jpg', 1200), caption: 'Red Pyramid, Dahshur', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Snofrus Red Pyramid in Dahshur (2).jpg', 1200), caption: 'Red Pyramid, Dahshur', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -572,7 +572,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Kairo Ibn Tulun Moschee BW 4.jpg', 1200), caption: 'Mosque of Ibn Tulun, Cairo (879)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Flickr - archer10 (Dennis) - Egypt-13A-061 (cropped).jpg', 1000), caption: 'Mosque-Madrasa of Sultan Hasan, Cairo (1356\u201363)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Al-Azhar Mosque Cairo.jpg', 1200), caption: 'Al-Azhar Mosque, Cairo (970)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Al-Azhar Mosque.jpg', 1200), caption: 'Al-Azhar Mosque, Cairo (970)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -581,9 +581,9 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Modern',
         text: 'Modern Egypt has sought monumental forms for a new era. The Bibliotheca Alexandrina, a vast tilted disc inscribed with the scripts of the world, reimagines the legendary ancient library as a beacon of contemporary learning.',
         media: [
-          { kind: 'image', src: commons("Alexandria's Bibliotheca.jpg", 1200), caption: 'Bibliotheca Alexandrina (2002)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Cairo Tower 2015.jpg', 1200), caption: 'Cairo Tower (1961)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Cairo Tower.jpg', 1200), caption: 'Cairo Tower and the Nile', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Bibliotiqa Alexandria 9 edited.jpg', 1200), caption: 'Bibliotheca Alexandrina (2002)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Cairo Tower, Egypt.jpg', 1200), caption: 'Cairo Tower (1961)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Nile and Cairo Tower - panoramio.jpg', 1200), caption: 'Cairo Tower and the Nile', credit: 'Wikimedia Commons' },
 ],
       },
     ],
