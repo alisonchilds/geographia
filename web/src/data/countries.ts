@@ -292,7 +292,14 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'Presidents from Mitterrand to Macron sponsored grands projets that mixed heritage with bold new forms. I. M. Pei\u2019s glass pyramid reframed the Louvre courtyard, Jean Nouvel\u2019s Fondation Louis Vuitton folded sails of glass above the Bois de Boulogne, and La Grande Arche at La D\u00e9fense completed a modern axis to the west of Paris.',
         media: [
           { kind: 'image', src: imageSrc('Cour Napoléon at night - Louvre.jpg', 1200), caption: 'Louvre Pyramid and courtyard, Paris (I. M. Pei, 1989)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Fondation Louis Vuitton 20160413 South 01.jpg', 1200), caption: 'Fondation Louis Vuitton, Paris (Jean Nouvel, 2014)', credit: 'Wikimedia Commons' },
+          {
+            kind: 'image',
+            src: imageSrc(
+              'https://upload.wikimedia.org/wikipedia/en/0/03/Fondation_Louis_Vuitton_-_Paris_%2850569906682%29.jpg',
+            ),
+            caption: 'Fondation Louis Vuitton, Paris (Jean Nouvel, 2014)',
+            credit: 'Wikipedia',
+          },
           { kind: 'image', src: imageSrc('Grande Arche, France - April 2011.jpg', 1000), caption: 'Grande Arche de la D\u00e9fense (1989)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('La Defense Paris.jpg', 1200), caption: 'La Défense business district, Paris', credit: 'Wikimedia Commons' },
 ],
