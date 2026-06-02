@@ -1,3 +1,4 @@
+import { fixGeoJson } from 'antimeridian-ts';
 import type { FeatureCollection, Geometry } from 'geojson';
 
 // Web Mercator / globe rendering breaks down beyond these latitudes and draws
@@ -26,13 +27,25 @@ function clampGeometry(geometry: Geometry): Geometry {
   }
 }
 
-/** Clamp country geometries so globe fill layers don't bleed over the ocean. */
+/** Split polygons that cross the dateline (e.g. Russia) so globe fills stay on land. */
+function fixAntimeridian(geometry: Geometry): Geometry {
+  try {
+    const fixed = fixGeoJson({ type: 'Feature', properties: {}, geometry });
+    if (fixed.type === 'Feature') return fixed.geometry;
+    return geometry;
+  } catch {
+    // Antarctica has pole-wrapping rings that the splitter can't handle; lat clamp is enough.
+    return geometry;
+  }
+}
+
+/** Prepare Natural Earth country shapes for Mapbox / MapLibre globe rendering. */
 export function prepareCountriesForGlobe(fc: FeatureCollection): FeatureCollection {
   return {
     type: 'FeatureCollection',
     features: fc.features.map((f) => ({
       ...f,
-      geometry: clampGeometry(f.geometry),
+      geometry: clampGeometry(fixAntimeridian(f.geometry)),
     })),
   };
 }
