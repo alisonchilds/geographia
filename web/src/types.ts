@@ -1,4 +1,4 @@
-// Shared domain types for the Atlas of Architecture app.
+// Shared domain types for the Omnia Archives app.
 
 // A media item attached to an era. The union is intentionally open so that
 // `video` and `animation` can be layered in later without restructuring the

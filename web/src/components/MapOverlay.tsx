@@ -90,7 +90,7 @@ export default function MapOverlay({
             </div>
             <div className="hidden shrink-0 leading-tight sm:block">
               <div className="font-serif text-[15px] font-semibold text-ink dark:text-neutral-100">
-                Atlas of Architecture
+                Omnia Archives
               </div>
               <div className="text-[11px] text-neutral-500 dark:text-neutral-400">
                 A world history of building

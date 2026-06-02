@@ -1,4 +1,4 @@
-# Atlas of Architecture
+# Omnia Archives
 
 An interactive, responsive web app that pairs a **Google-Maps-style world map** with a
 **Wikipedia-style article panel** to explore the history of architecture country by country.

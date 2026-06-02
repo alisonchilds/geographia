@@ -7,7 +7,7 @@
 // Get a free key at https://unsplash.com/developers (create an app).
 
 const ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY as string | undefined;
-const UTM = '?utm_source=atlas_of_architecture&utm_medium=referral';
+const UTM = '?utm_source=omnia_archives&utm_medium=referral';
 
 export const isUnsplashEnabled = Boolean(ACCESS_KEY);
 

@@ -62,7 +62,7 @@ export default function UnsplashGallery({ photos = [], loading = false }: Unspla
       <p className="mt-2 text-[11px] text-neutral-400 dark:text-neutral-500">
         Photos via{' '}
         <a
-          href="https://unsplash.com/?utm_source=atlas_of_architecture&utm_medium=referral"
+          href="https://unsplash.com/?utm_source=omnia_archives&utm_medium=referral"
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:text-neutral-600 dark:hover:text-neutral-300"
