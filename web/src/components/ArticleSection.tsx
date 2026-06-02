@@ -14,7 +14,6 @@ interface ArticleSectionProps {
 function Figure({ media, large }: { media: Media; large?: boolean }) {
   const caption = media.caption;
   const credit = media.credit;
-  // Taller frames on small screens; desktop keeps the denser grid ratios.
   const aspect = large ? 'aspect-[16/10]' : 'aspect-[16/10] md:aspect-[4/3]';
 
   let visual: React.ReactNode = null;
@@ -60,8 +59,10 @@ export default function ArticleSection({
 }: ArticleSectionProps) {
   const media = extraMedia.length > 0 ? [...era.media, ...extraMedia] : era.media;
 
-  // Narrow desktop: one hero image over a pair (see curated eras with 3 photos).
-  const heroPairLayout = !wide && !stackImages && media.length === 3;
+  // One hero over a pair — keeps three-up eras readable in narrow and expanded panels.
+  const oneOverTwoLayout = !stackImages && media.length === 3;
+  // Expanded panel: two rows of two instead of a cramped three-column strip.
+  const twoOverTwoLayout = wide && !stackImages && media.length === 4;
 
   // Never use more columns than there are images, so two images always span the
   // full width (50/50) instead of leaving an empty third column when expanded.
@@ -75,6 +76,44 @@ export default function ArticleSection({
         ? 'grid-cols-2'
         : 'grid-cols-1';
   const largeImages = stackImages || colCount <= 2;
+
+  const mediaGrid = (() => {
+    if (oneOverTwoLayout) {
+      return (
+        <div className="grid gap-4">
+          <Figure media={media[0]} large />
+          <div className="grid grid-cols-2 gap-4">
+            <Figure media={media[1]} large={wide} />
+            <Figure media={media[2]} large={wide} />
+          </div>
+        </div>
+      );
+    }
+
+    if (twoOverTwoLayout) {
+      return (
+        <div className="grid gap-4">
+          <div className="grid grid-cols-2 gap-4">
+            <Figure media={media[0]} large />
+            <Figure media={media[1]} large />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <Figure media={media[2]} large />
+            <Figure media={media[3]} large />
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className={`grid gap-4 ${gridCols}`}>
+        {media.map((m, i) => (
+          <Figure key={i} media={m} large={largeImages} />
+        ))}
+      </div>
+    );
+  })();
+
   return (
     <motion.section
       id={`era-${era.id}`}
@@ -90,22 +129,7 @@ export default function ArticleSection({
       <h3 className="mb-2 font-serif text-xl font-semibold text-ink dark:text-neutral-100">{era.title}</h3>
       <p className="mb-4 text-[15px] leading-relaxed text-neutral-700 dark:text-neutral-300">{era.text}</p>
 
-      {media.length > 0 &&
-        (heroPairLayout ? (
-          <div className="grid gap-4">
-            <Figure media={media[0]} large />
-            <div className="grid grid-cols-2 gap-4">
-              <Figure media={media[1]} />
-              <Figure media={media[2]} />
-            </div>
-          </div>
-        ) : (
-          <div className={`grid gap-4 ${gridCols}`}>
-            {media.map((m, i) => (
-              <Figure key={i} media={m} large={largeImages} />
-            ))}
-          </div>
-        ))}
+      {media.length > 0 && mediaGrid}
     </motion.section>
   );
 }
