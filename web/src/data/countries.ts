@@ -606,8 +606,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'India\u2019s earliest surviving monuments are Buddhist: hemispherical stupas enshrining relics, ringed by railings and crowned with sculpted gateways. The Great Stupa at Sanchi, with its richly carved toranas, is the supreme example.',
         media: [
           { kind: 'image', src: commons('East Gateway - Stupa 1 - Sanchi Hill 2013-02-21 4398.JPG', 1200), caption: 'Great Stupa, Sanchi (3rd c. BCE onward)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Ajanta Caves Aurangabad.jpg', 1200), caption: 'Ajanta Caves, Maharashtra', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Ajanta Caves - Cave 26.jpg', 1200), caption: 'Cave 26, Ajanta', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Ajanta Caves.jpg', 1200), caption: 'Ajanta Caves, Maharashtra', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Cave 26, Ajanta.jpg', 1200), caption: 'Cave 26, Ajanta', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -618,7 +618,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Kandariya Mahadeva Temple 03.jpg', 1200), caption: 'Kandariya Mahadeva Temple, Khajuraho', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Brihadisvara Temple during Maha Shivaratri-WUS03611 (edit).jpg', 1000), caption: 'Brihadisvara Temple, Thanjavur (1010)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Meenakshi Temple Madurai.jpg', 1200), caption: 'Meenakshi Temple, Madurai', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Meenakshi Amman Temple.jpg', 1200), caption: 'Meenakshi Temple, Madurai', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -628,8 +628,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'The Delhi Sultanate introduced arches, domes, and minarets, fused with local stone craft. The towering Qutb Minar, a fluted victory tower of red sandstone and marble, marks the arrival of this new architectural language.',
         media: [
           { kind: 'image', src: commons('Qutb Minar 2022.jpg', 1000), caption: 'Qutb Minar, Delhi (begun c. 1199)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Alai Darwaza Qutb complex.jpg', 1200), caption: 'Alai Darwaza, Qutb complex, Delhi', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Quwwat-ul-Islam Mosque.jpg', 1200), caption: 'Quwwat-ul-Islam Mosque, Delhi', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Alai Darwaza.jpg', 1200), caption: 'Alai Darwaza, Qutb complex, Delhi', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Quwwat ul Islam Mosque.jpg', 1200), caption: 'Quwwat-ul-Islam Mosque, Delhi', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -640,7 +640,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons("Humayun's Tomb, Delhi.jpg", 1200), caption: "Humayun's Tomb, Delhi (1572)", credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Taj Mahal (Edited).jpeg', 1200), caption: 'The Taj Mahal, Agra (1632\u201353)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Red Fort Delhi.jpg', 1200), caption: 'Red Fort, Delhi (1639–48)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Red Fort, Delhi.jpg', 1200), caption: 'Red Fort, Delhi (1639–48)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -650,8 +650,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'British rule produced a hybrid Indo-Saracenic architecture, grafting Mughal domes and chhatris onto European classical plans. The white-marble Victoria Memorial in Kolkata is its grandest monument.',
         media: [
           { kind: 'image', src: commons('Victoria Memorial situated in Kolkata.jpg', 1200), caption: 'Victoria Memorial, Kolkata (1906\u201321)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Gateway of India Mumbai.jpg', 1200), caption: 'Gateway of India, Mumbai (1924)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Chhatrapati Shivaji Terminus Mumbai.jpg', 1200), caption: 'Chhatrapati Shivaji Terminus, Mumbai (1887)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Gateway of India, Mumbai.jpg', 1200), caption: 'Gateway of India, Mumbai (1924)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Chhatrapati Shivaji Terminus.jpg', 1200), caption: 'Chhatrapati Shivaji Terminus, Mumbai (1887)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -661,8 +661,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'After independence, India embraced bold modernism \u2014 from Le Corbusier\u2019s Chandigarh to expressive sculptural landmarks. The Lotus Temple abstracts a blooming flower into 27 free-standing marble petals.',
         media: [
           { kind: 'image', src: commons('Lotus Temple in New Delhi 03-2016.jpg', 1200), caption: 'Lotus Temple, New Delhi (1986)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Chandigarh Capitol Complex.jpg', 1200), caption: 'Capitol Complex, Chandigarh (Le Corbusier)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Indian Institute of Management Ahmedabad.jpg', 1200), caption: 'Indian Institute of Management, Ahmedabad (Louis Kahn)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Chandigarh High Court.jpg', 1200), caption: 'Capitol Complex, Chandigarh (Le Corbusier)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Indian Institute of Management Ahmedabad, Louis Kahn Plaza.jpg', 1200), caption: 'Indian Institute of Management, Ahmedabad (Louis Kahn)', credit: 'Wikimedia Commons' },
 ],
       },
     ],
@@ -742,8 +742,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'Teotihuacan was one of the largest cities of the ancient world, laid out on a vast ceremonial axis. Its Pyramid of the Sun rises in stepped talud-tablero terraces, a form echoed across Mesoamerican civilisations for centuries.',
         media: [
           { kind: 'image', src: commons('Teotihuacan Pyramid of the Sun.jpg', 1200), caption: 'Pyramid of the Sun, Teotihuacan', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Pyramid of the Moon, Teotihuacan.jpg', 1200), caption: 'Pyramid of the Moon, Teotihuacan', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Teotihuacan Avenue of the Dead.jpg', 1200), caption: 'Avenue of the Dead, Teotihuacan', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Pirámide de la Luna, 2020.jpg', 1200), caption: 'Pyramid of the Moon, Teotihuacan', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Calzada de los Muertos y Pirámide de la Luna.jpg', 1200), caption: 'Avenue of the Dead, Teotihuacan', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -753,8 +753,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'The Zapotecs levelled a mountaintop to build Monte Alb\u00e1n, arranging plazas, platforms, and ball courts around a vast artificial esplanade with commanding views over the Oaxaca valleys.',
         media: [
           { kind: 'image', src: commons('Monte Alban West Side Platform.jpg', 1200), caption: 'Monte Alb\u00e1n, Oaxaca', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Monte Alban Gran Plaza.jpg', 1200), caption: 'Grand Plaza, Monte Albán', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Monte Alban Ball Court.jpg', 1200), caption: 'Ball court, Monte Albán', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Monte Alban, Main Plaza, Building J, and the North Platform (20498776500).jpg', 1200), caption: 'Grand Plaza, Monte Albán', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Ball court at monte alban.jpg', 1200), caption: 'Ball court, Monte Albán', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -775,8 +775,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'At the heart of their island capital Tenochtitlan, the Aztecs raised the twin-shrined Templo Mayor. Its excavated foundations now sit beside the cathedral that the Spanish built from its stones.',
         media: [
           { kind: 'image', src: commons('Templo Mayor 50.jpg', 1200), caption: 'Templo Mayor, Mexico City', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Templo Mayor excavations Mexico City.jpg', 1200), caption: 'Excavations, Templo Mayor, Mexico City', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Aztec calendar stone.jpg', 1200), caption: 'Aztec calendar stone, National Museum of Anthropology', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Templo Mayor 2015 175.jpg', 1200), caption: 'Excavations, Templo Mayor, Mexico City', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Monolito de la Piedra del Sol.jpg', 1200), caption: 'Aztec calendar stone, National Museum of Anthropology', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -786,8 +786,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'Spanish friars and architects covered New Spain with churches, convents, and cathedrals in a richly ornamented baroque \u2014 frequently built from the stones of demolished pre-Hispanic temples. Mexico City\u2019s Metropolitan Cathedral, the largest in the Americas, took nearly 250 years to complete.',
         media: [
           { kind: 'image', src: commons('Mexico City Metropolitan Cathedral.jpg', 1200), caption: 'Mexico City Metropolitan Cathedral (1573\u20131813)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Santo Domingo Oaxaca.jpg', 1200), caption: 'Church of Santo Domingo de Guzmán, Oaxaca', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Guadalajara Cathedral Mexico.jpg', 1200), caption: 'Guadalajara Cathedral', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Church of Santo Domingo in Oaxaca.jpg', 1200), caption: 'Church of Santo Domingo de Guzmán, Oaxaca', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Guadalajara Cathedral.jpg', 1200), caption: 'Guadalajara Cathedral', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -798,7 +798,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Bellas Artes 01.jpg', 1200), caption: 'Palacio de Bellas Artes, Mexico City (1904\u201334)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Torre Latinoamericana Mexico City.jpg', 1200), caption: 'Torre Latinoamericana, Mexico City (1956)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Museo Soumaya Mexico City.jpg', 1200), caption: 'Museo Soumaya, Mexico City (2011)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Museo Soumaya Mexico.jpg', 1200), caption: 'Museo Soumaya, Mexico City (2011)', credit: 'Wikimedia Commons' },
 ],
       },
     ],
