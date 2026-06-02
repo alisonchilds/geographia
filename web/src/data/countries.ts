@@ -35,7 +35,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Colosseo 2020.jpg', 1200), caption: 'The Colosseum (72\u201380 CE), Rome', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Pantheon front.jpg', 1200), caption: 'The Pantheon (c. 126 CE), Rome', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Roman Forum seen from the Palatine Hill.jpg', 1200), caption: 'Roman Forum, Rome', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Forum Romanum Rome.jpg', 1200), caption: 'Roman Forum, Rome', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -45,8 +45,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'As Christianity became legal, worship adopted the Roman basilica: a long, colonnaded hall leading to an apse. Plain brick exteriors gave way to luminous interiors of marble columns and gilded mosaic. Santa Sabina in Rome is among the purest survivors of this restrained, soaring type.',
         media: [
           { kind: 'image', src: commons('Santa Sabina (Rome) - Interior.jpg', 1200), caption: 'Basilica of Santa Sabina, Rome (422\u2013432)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Basilica of San Clemente (Rome) - Interior.jpg', 1200), caption: 'Basilica of San Clemente, Rome (4th c.)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Basilica di Santa Maria Maggiore (Rome).jpg', 1200), caption: 'Basilica of Santa Maria Maggiore, Rome', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Basilica di San Clemente al Laterano - interno.jpg', 1200), caption: 'Basilica of San Clemente, Rome (4th c.)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Basílica de Santa María la Mayor, Roma, Italia, 2022-09-16, DD 12-14 HDR.jpg', 1200), caption: 'Basilica of Santa Maria Maggiore, Rome', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -57,7 +57,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Basilica of San Vitale.jpg', 1200), caption: 'Basilica of San Vitale, Ravenna (consecrated 547)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Mausoleum of Galla Placidia in Ravenna.JPG', 1000), caption: 'Mausoleum of Galla Placidia, Ravenna', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Basilica of Sant Apollinare Nuovo.jpg', 1200), caption: 'Basilica of Sant’Apollinare Nuovo, Ravenna', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc("Basilica of Sant' Apollinare Nuovo. Ravenna, Italy.jpg", 1200), caption: 'Basilica of Sant\u2019Apollinare Nuovo, Ravenna', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -68,7 +68,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Leaning Tower of Pisa.jpg', 1000), caption: 'The Leaning Tower of Pisa (begun 1173)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Pisa - Cattedrale da Battistero 02.jpg', 1200), caption: 'Pisa Cathedral, Piazza dei Miracoli', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Pisa Cathedral - Interior.jpg', 1200), caption: 'Interior of Pisa Cathedral', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Pisa Cathedral Interior.jpg', 1200), caption: 'Interior of Pisa Cathedral', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -78,8 +78,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'Italy adapted northern Gothic to its own taste, favouring broad wall surfaces, polychrome marble, and restrained verticality over soaring skeletal stone. Milan Cathedral is the great exception \u2014 a forest of pinnacles and flying buttresses that took nearly six centuries to complete.',
         media: [
           { kind: 'image', src: commons('Milan Cathedral from Piazza del Duomo.jpg', 1200), caption: 'Milan Cathedral, begun 1386', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Orvieto - Duomo facciata.jpg', 1200), caption: 'Orvieto Cathedral facade', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Orvieto Cathedral facade.jpg', 1200), caption: 'Orvieto Cathedral, Umbria', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Façade of the Duomo di Orvieto, Aligned in Light.jpg', 1200), caption: 'Orvieto Cathedral facade', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Portali del Duomo di Orvieto.jpg', 1200), caption: 'Orvieto Cathedral, Umbria', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -90,7 +90,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Florence Duomo from Michelangelo hill.jpg', 1200), caption: 'Florence Cathedral dome by Brunelleschi (1420\u201336)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Cattedrale di Santa Maria del Fiore \u2013 Il Duomo di Firenze.jpg', 1200), caption: 'Santa Maria del Fiore, Florence', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Tempietto del Bramante Rome.jpg', 1200), caption: 'Tempietto, San Pietro in Montorio, Rome (Bramante)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Tempietto del Bramante (2).jpg', 1200), caption: 'Tempietto, San Pietro in Montorio, Rome (Bramante)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -112,7 +112,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Trevi Fountain, Rome, Italy 2 - May 2007.jpg', 1200), caption: 'Trevi Fountain, completed 1762', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Piazza di Spagna (Rome) 0004.jpg', 1200), caption: 'The Spanish Steps, Rome (1723\u201325)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('San Carlo alle Quattro Fontane Rome.jpg', 1200), caption: 'San Carlo alle Quattro Fontane, Rome (Borromini)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('San Carlo alle Quattro Fontane - Front.jpg', 1200), caption: 'San Carlo alle Quattro Fontane, Rome (Borromini)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -123,7 +123,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Campania Caserta2 tango7174.jpg', 1200), caption: 'Royal Palace of Caserta (begun 1752)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Galleria Milano (179532365).jpeg', 1200), caption: 'Galleria Vittorio Emanuele II, Milan (1865\u201377)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Altare della Patria Rome.jpg', 1200), caption: 'Altare della Patria, Rome (1885–1935)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Altar della Patria September 2015-1.jpg', 1200), caption: 'Altare della Patria, Rome (1885–1935)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -134,7 +134,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Palazzo della civilt\u00e0 del lavoro (EUR, Rome) (5904657870).jpg', 1200), caption: 'Palazzo della Civilt\u00e0 Italiana, EUR, Rome (1938\u201343)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('Como - Casa del Fascio - 27-09-2017.jpg', 1000), caption: 'Casa del Fascio, Como (Terragni, 1932\u201336)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Palazzo della Civilta Italiana EUR.jpg', 1200), caption: 'Palazzo della Civiltà Italiana, EUR, Rome', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Palazzo della Civiltà Italiana a EUR Roma cropped.jpg', 1200), caption: 'Palazzo della Civiltà Italiana, EUR, Rome', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -143,9 +143,9 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Modern & Contemporary',
         text: 'Postwar Italy produced elegant towers like Gio Ponti\u2019s Pirelli skyscraper and, more recently, world landmarks of sustainable and sculptural design \u2014 from Zaha Hadid\u2019s flowing MAXXI museum to Stefano Boeri\u2019s plant-covered Bosco Verticale towers.',
         media: [
-          { kind: 'image', src: commons('MAXXI (27483747665).jpg', 1200), caption: 'MAXXI museum, Rome (Zaha Hadid, 2010)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons('Bosco Verticale Milano.jpg', 1000), caption: 'Bosco Verticale, Milan (2014)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: commons("Looking up at Torre Pirelli from Piazza Duca d'Aosta, Milan.jpg", 1000), caption: 'Pirelli Tower, Milan (Gio Ponti, 1958)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('MAXXI (2017) Rome 112.jpg', 1200), caption: 'MAXXI museum, Rome (Zaha Hadid, 2010)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Il Bosco Verticale Milano Px (137734459).jpeg', 1000), caption: 'Bosco Verticale, Milan (2014)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: commons('Mi-Milano-1959-Grattacielo-Pirelli-01.jpg', 1000), caption: 'Pirelli Tower, Milan (Gio Ponti, 1958)', credit: 'Wikimedia Commons' },
         ],
       },
     ],
