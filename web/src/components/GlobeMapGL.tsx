@@ -3,7 +3,7 @@ import { feature } from 'topojson-client';
 import type { FeatureCollection } from 'geojson';
 import { geoCentroid } from 'd3-geo';
 import { ATLAS, buildAtlasFillColorExpression } from '../lib/mapPalette';
-import { WORLD_OCEAN } from '../lib/globeOcean';
+import { prepareCountriesForGlobe } from '../lib/globeGeojson';
 import { glZoomToSvg, svgZoomToGl } from '../lib/mapProjection';
 import { isMapboxEnabled, MAPBOX_TOKEN } from '../lib/mapbox';
 import type { MapPosition } from '../lib/mapTypes';
@@ -32,7 +32,7 @@ function buildGlobeStyle(useMapbox: boolean) {
       {
         id: 'background',
         type: 'background' as const,
-        paint: { 'background-color': ATLAS.background },
+        paint: { 'background-color': ATLAS.ocean },
       },
     ],
   };
@@ -50,7 +50,9 @@ function configureGlobeAtmosphere(map: GlobeMap) {
       color: ATLAS.ocean,
       'high-color': ATLAS.ocean,
       'space-color': ATLAS.background,
-      'horizon-blend': 0.08,
+      // Tighter atmosphere — less blue glow around the sphere edge.
+      'horizon-blend': 0.02,
+      range: [1, 12],
       'star-intensity': 0,
     });
   }
@@ -69,6 +71,7 @@ async function createGlobeMap(
       container,
       style: buildGlobeStyle(true) as unknown as mapboxgl.StyleSpecification,
       projection: 'globe',
+      renderWorldCopies: false,
       center,
       zoom,
       minZoom: svgZoomToGl(1),
@@ -85,6 +88,7 @@ async function createGlobeMap(
   return new maplibregl.default.Map({
     container,
     style: buildGlobeStyle(false) as unknown as maplibregl.StyleSpecification,
+    renderWorldCopies: false,
     center,
     zoom,
     minZoom: svgZoomToGl(1),
@@ -145,7 +149,9 @@ export default function GlobeMapGL({
             const topology = await fetch(GEO_URL).then((r) => r.json());
             if (cancelled) return;
 
-            const fc = feature(topology, topology.objects.countries) as FeatureCollection;
+            const fc = prepareCountriesForGlobe(
+              feature(topology, topology.objects.countries) as FeatureCollection,
+            );
             const centroids: Record<string, [number, number]> = {};
             for (const f of fc.features) {
               const name = (f.properties as { name?: string } | null)?.name;
@@ -153,17 +159,6 @@ export default function GlobeMapGL({
               centroids[name] = geoCentroid(f) as [number, number];
             }
             centroidsRef.current = centroids;
-
-            m.addSource('ocean', { type: 'geojson', data: WORLD_OCEAN });
-            m.addLayer({
-              id: 'ocean-fill',
-              type: 'fill',
-              source: 'ocean',
-              paint: {
-                'fill-color': ATLAS.ocean,
-                'fill-antialias': true,
-              },
-            });
 
             m.addSource('countries', {
               type: 'geojson',
