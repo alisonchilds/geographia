@@ -697,7 +697,7 @@ export const CURATED: Record<string, CountryContent> = {
         media: [
           { kind: 'image', src: commons('Attica 06-13 Athens 22 View from Acropolis Hill - Museum of Ancient Agora.jpg', 1200), caption: 'Stoa of Attalos, Athens', credit: 'Wikimedia Commons' },
           { kind: 'image', src: commons('The great theater of Epidaurus, designed by Polykleitos the Younger in the 4th century BC, Sanctuary of Asklepeios at Epidaurus, Greece (14015010416).jpg', 1000), caption: 'Theatre of Epidaurus (4th c. BCE)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Rotunda Thessaloniki.jpg', 1200), caption: 'Rotunda of Galerius, Thessaloniki', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Rotunda of Galerius.jpg', 1200), caption: 'Rotunda of Galerius, Thessaloniki', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -707,8 +707,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'Greek Byzantine churches perfected the cross-in-square plan crowned by a central dome, their interiors glowing with gold-ground mosaic. The monastery of Hosios Loukas is among the finest surviving ensembles.',
         media: [
           { kind: 'image', src: commons('Μονή Οσίου Λουκά 1290.jpg', 1200), caption: 'Monastery of Hosios Loukas (10th\u201311th c.)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Daphni Monastery mosaics.jpg', 1200), caption: 'Mosaics, Daphni Monastery, Athens', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('Moni Daphni.jpg', 1200), caption: 'Daphni Monastery (11th c.)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc("0246 - Mosaics in the church of the Monastery of Daphni (Athens) - Photo by Giovanni Dall'Orto - April 5 2025.jpg", 1200), caption: 'Mosaics, Daphni Monastery, Athens', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Dafni Monastery.jpg', 1200), caption: 'Daphni Monastery (11th c.)', credit: 'Wikimedia Commons' },
 ],
       },
       {
@@ -718,8 +718,8 @@ export const CURATED: Record<string, CountryContent> = {
         text: 'After independence, the new Greek state looked back to its classical roots, and Athens filled with marble Neoclassical institutions. The Academy of Athens, designed by Theophil Hansen, is a luminous re-creation of ancient form.',
         media: [
           { kind: 'image', src: commons('Akademie von Athen.jpg', 1200), caption: 'Academy of Athens (1859\u20131885)', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('National Library of Greece Athens.jpg', 1200), caption: 'National Library of Greece, Athens', credit: 'Wikimedia Commons' },
-          { kind: 'image', src: imageSrc('University of Athens Neoclassical.jpg', 1200), caption: 'University of Athens (1837)', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('National Library of Greece.jpg', 1200), caption: 'National Library of Greece, Athens', credit: 'Wikimedia Commons' },
+          { kind: 'image', src: imageSrc('Sphinx-University of Athens.jpg', 1200), caption: 'University of Athens (1837)', credit: 'Wikimedia Commons' },
 ],
       },
     ],
