@@ -6,7 +6,9 @@ import MapOverlay from './components/MapOverlay';
 import CountryPanel from './components/CountryPanel';
 import { CURATED } from './data/countries';
 import { loadCountry } from './lib/wikipedia';
+import { centerForCollapsedPanel } from './lib/mapPanelCenter';
 import { useMapRenderer } from './lib/mapRenderer';
+import { useIsMobile } from './lib/useIsMobile';
 import type { MapPosition } from './lib/mapTypes';
 import type { PanelData } from './types';
 
@@ -28,6 +30,7 @@ export default function App() {
   const [open, setOpen] = useState(false);
   const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
   const mapRenderer = useMapRenderer();
+  const isMobile = useIsMobile();
 
   const [countryNames, setCountryNames] = useState<string[]>([]);
   const centroidsRef = useRef<Record<string, [number, number]>>({});
@@ -62,7 +65,10 @@ export default function App() {
   const selectCountry = useCallback((name: string, centroid: [number, number]) => {
     setSelected(name);
     setOpen(true);
-    setPosition({ coordinates: centroid, zoom: 4 });
+    const zoom = 4;
+    const width = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const coordinates = centerForCollapsedPanel(centroid, zoom, width, isMobile);
+    setPosition({ coordinates, zoom });
 
     const id = ++requestId.current;
     setLoading(true);
@@ -74,7 +80,7 @@ export default function App() {
       .finally(() => {
         if (id === requestId.current) setLoading(false);
       });
-  }, []);
+  }, [isMobile]);
 
   const handleSearchSelect = useCallback(
     (name: string) => {
