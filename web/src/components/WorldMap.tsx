@@ -17,7 +17,6 @@ import type { MapPosition } from '../lib/mapTypes';
 
 interface WorldMapProps {
   selectedCountry: string | null;
-  curatedNames: Set<string>;
   position: MapPosition;
   onSelectCountry: (name: string, centroid: [number, number]) => void;
   onMoveEnd: (position: MapPosition) => void;
@@ -29,7 +28,6 @@ type Geo = any;
 
 export default function WorldMap({
   selectedCountry,
-  curatedNames,
   position,
   onSelectCountry,
   onMoveEnd,
@@ -114,17 +112,6 @@ export default function WorldMap({
           </Geographies>
         </ZoomableGroup>
       </ComposableMap>
-
-      {hovered && (
-        <div className="pointer-events-none absolute bottom-6 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-black/75 px-4 py-1.5 text-sm font-medium text-white shadow-float">
-          {hovered}
-          {curatedNames.has(hovered) && (
-            <span className="ml-2 rounded-full bg-[#f5c842] px-2 py-0.5 text-[11px] font-semibold text-[#1a1a1a]">
-              Featured
-            </span>
-          )}
-        </div>
-      )}
     </div>
   );
 }

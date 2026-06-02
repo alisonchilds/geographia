@@ -4,6 +4,7 @@ import { geoCentroid } from 'd3-geo';
 import WorldMap from './components/WorldMap';
 import MapOverlay from './components/MapOverlay';
 import CountryPanel from './components/CountryPanel';
+import CountryHoverLabel from './components/CountryHoverLabel';
 import { CURATED } from './data/countries';
 import { loadCountry } from './lib/wikipedia';
 import { centerForCollapsedPanel } from './lib/mapPanelCenter';
@@ -110,7 +111,6 @@ export default function App() {
         <Suspense fallback={null}>
           <GlobeMapGL
             selectedCountry={selected}
-            curatedNames={CURATED_NAMES}
             position={position}
             onSelectCountry={selectCountry}
             onMoveEnd={setPosition}
@@ -120,7 +120,6 @@ export default function App() {
       ) : (
         <WorldMap
           selectedCountry={selected}
-          curatedNames={CURATED_NAMES}
           position={position}
           onSelectCountry={selectCountry}
           onMoveEnd={setPosition}
@@ -146,6 +145,15 @@ export default function App() {
         countryName={selected}
         onClose={closePanel}
       />
+
+      {hoveredCountry && (
+        <CountryHoverLabel
+          name={hoveredCountry}
+          featured={CURATED_NAMES.has(hoveredCountry)}
+          panelOpen={open}
+          isMobile={isMobile}
+        />
+      )}
 
       {/* First-run hint — hidden while hovering a country so it never covers the label */}
       {!open && !hoveredCountry && countryNames.length > 0 && (
