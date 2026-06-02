@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { CURATED } from '../data/countries';
 import { toggleMapRenderer } from '../lib/mapRenderer';
+import { globeEngineLabel } from '../lib/mapbox';
 import type { MapRenderer } from '../lib/mapTypes';
 import { toggleTheme, useIsDark } from '../lib/theme';
 
@@ -174,7 +175,7 @@ export default function MapOverlay({
         <button
           onClick={toggleMapRenderer}
           aria-label={mapRenderer === 'globe' ? 'Switch to flat map' : 'Try 3D globe'}
-          title={mapRenderer === 'globe' ? 'Flat map' : '3D globe (MapLibre)'}
+          title={mapRenderer === 'globe' ? 'Flat map' : `3D globe (${globeEngineLabel})`}
           className={`flex h-10 w-10 items-center justify-center rounded-xl bg-white/95 text-ink shadow-float backdrop-blur hover:bg-neutral-100 ${overlayDark} ${overlayDarkHover}`}
         >
           {mapRenderer === 'globe' ? (

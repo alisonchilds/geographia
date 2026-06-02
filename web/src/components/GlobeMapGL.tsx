@@ -22,7 +22,29 @@ interface GlobeMapGLProps {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type GlobeMap = any;
 
+function buildGlobeStyle(useMapbox: boolean) {
+  return {
+    version: 8 as const,
+    // Mapbox style spec uses `name`; MapLibre uses `type`.
+    projection: useMapbox ? { name: 'globe' as const } : { type: 'globe' as const },
+    sources: {},
+    layers: [
+      {
+        id: 'background',
+        type: 'background' as const,
+        paint: { 'background-color': ATLAS.background },
+      },
+    ],
+  };
+}
+
+function configureGlobeProjection(map: GlobeMap) {
+  if (typeof map.setProjection !== 'function') return;
+  map.setProjection(isMapboxEnabled ? 'globe' : { type: 'globe' });
+}
+
 function configureGlobeAtmosphere(map: GlobeMap) {
+  configureGlobeProjection(map);
   if (typeof map.setFog === 'function') {
     map.setFog({
       color: ATLAS.globeOcean,
@@ -39,26 +61,14 @@ async function createGlobeMap(
   center: [number, number],
   zoom: number,
 ): Promise<GlobeMap> {
-  const style = {
-    version: 8 as const,
-    projection: { type: 'globe' as const },
-    sources: {},
-    layers: [
-      {
-        id: 'background',
-        type: 'background' as const,
-        paint: { 'background-color': ATLAS.background },
-      },
-    ],
-  };
-
   if (isMapboxEnabled) {
     const mapboxgl = await import('mapbox-gl');
     await import('mapbox-gl/dist/mapbox-gl.css');
     mapboxgl.default.accessToken = MAPBOX_TOKEN!;
     const map = new mapboxgl.default.Map({
       container,
-      style: style as unknown as mapboxgl.StyleSpecification,
+      style: buildGlobeStyle(true) as unknown as mapboxgl.StyleSpecification,
+      projection: 'globe',
       center,
       zoom,
       minZoom: svgZoomToGl(1),
@@ -74,7 +84,7 @@ async function createGlobeMap(
   await import('maplibre-gl/dist/maplibre-gl.css');
   return new maplibregl.default.Map({
     container,
-    style: style as unknown as maplibregl.StyleSpecification,
+    style: buildGlobeStyle(false) as unknown as maplibregl.StyleSpecification,
     center,
     zoom,
     minZoom: svgZoomToGl(1),
