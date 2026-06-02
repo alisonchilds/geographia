@@ -47,8 +47,8 @@ function configureGlobeAtmosphere(map: GlobeMap) {
   configureGlobeProjection(map);
   if (typeof map.setFog === 'function') {
     map.setFog({
-      color: ATLAS.globeOcean,
-      'high-color': ATLAS.globeOcean,
+      color: ATLAS.ocean,
+      'high-color': ATLAS.ocean,
       'space-color': ATLAS.background,
       'horizon-blend': 0.08,
       'star-intensity': 0,
@@ -160,7 +160,7 @@ export default function GlobeMapGL({
               type: 'fill',
               source: 'ocean',
               paint: {
-                'fill-color': ATLAS.globeOcean,
+                'fill-color': ATLAS.ocean,
                 'fill-antialias': true,
               },
             });

@@ -1,7 +1,6 @@
 import type { FeatureCollection } from 'geojson';
 
-// Two hemispheres avoid an antimeridian seam on the globe. Placed beneath country
-// polygons so the sphere reads as light-blue ocean instead of dark background.
+// Full-world fill beneath country polygons so the globe reads as ocean blue.
 export const WORLD_OCEAN: FeatureCollection = {
   type: 'FeatureCollection',
   features: [
@@ -9,25 +8,14 @@ export const WORLD_OCEAN: FeatureCollection = {
       type: 'Feature',
       properties: {},
       geometry: {
-        type: 'MultiPolygon',
+        type: 'Polygon',
         coordinates: [
           [
-            [
-              [-180, -90],
-              [0, -90],
-              [0, 90],
-              [-180, 90],
-              [-180, -90],
-            ],
-          ],
-          [
-            [
-              [0, -90],
-              [180, -90],
-              [180, 90],
-              [0, 90],
-              [0, -90],
-            ],
+            [-180, -90],
+            [180, -90],
+            [180, 90],
+            [-180, 90],
+            [-180, -90],
           ],
         ],
       },
