@@ -65,9 +65,10 @@ export default function CountryPanel({
   const [galleryPhotos, setGalleryPhotos] = useState<UnsplashPhoto[]>([]);
   const [unsplashLoading, setUnsplashLoading] = useState(false);
 
-  // Collapse back to the default size whenever a new country is opened.
+  // Collapse and scroll to top whenever a new country is opened.
   useEffect(() => {
     setExpanded(false);
+    scrollRef.current?.scrollTo({ top: 0 });
   }, [countryName]);
 
   // Fetch Unsplash photos: one query per era (for relevance) plus a country
