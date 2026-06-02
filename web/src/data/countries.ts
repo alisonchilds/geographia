@@ -279,7 +279,12 @@ export const CURATED: Record<string, CountryContent> = {
         title: 'Modernism',
         text: 'Le Corbusier proposed the house as a machine for living and the city as a rational plan. Villa Savoye floats on pilotis with a ribbon window and roof garden, while the chapel at Ronchamp sculpts thick walls and a soaring concrete roof into spiritual drama. In Marseille, the Unit\u00e9 d\u2019habitation tested high-rise communal living; in Paris, the Centre Pompidou turned structure and services inside out.',
         media: [
-          { kind: 'image', src: imageSrc('Villa Savoye (8237925975).jpg', 1200), caption: 'Villa Savoye, Poissy (Le Corbusier, 1929\u201331)', credit: 'Wikimedia Commons' },
+          {
+            kind: 'image',
+            src: imageSrc('https://upload.wikimedia.org/wikipedia/en/3/3c/VillaSavoye.jpg'),
+            caption: 'Villa Savoye, Poissy (Le Corbusier, 1929\u201331)',
+            credit: 'Wikipedia',
+          },
           { kind: 'image', src: imageSrc('Chapelle Notre-Dame-du Haut 04.jpg', 1200), caption: 'Notre-Dame du Haut, Ronchamp (Le Corbusier, 1955)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('Le Corbusier, La Cité Radieuse, Marseille.jpg', 1200), caption: 'Unit\u00e9 d\u2019habitation, Marseille (1947\u201352)', credit: 'Wikimedia Commons' },
           { kind: 'image', src: imageSrc('0 Centre Georges-Pompidou - 1986 Paris.JPG', 1000), caption: 'Centre Pompidou, Paris (1977)', credit: 'Wikimedia Commons' },
