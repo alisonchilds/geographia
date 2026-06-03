@@ -171,12 +171,24 @@ export default function CountryPanel({
                     className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-overlayDarkHover dark:text-neutral-100 dark:hover:bg-neutral-950"
                   >
                     {expanded ? (
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M9 9 4 4m0 0v4m0-4h4m6 6 5 5m0 0v-4m0 4h-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path
+                          d="M9 9H4V4M15 9h5V4M9 15H4v5M15 15h5v5"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     ) : (
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5m11-5v5h-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path
+                          d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
                       </svg>
                     )}
                   </button>
@@ -186,7 +198,7 @@ export default function CountryPanel({
                   aria-label="Close"
                   className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-ink shadow-float backdrop-blur transition hover:bg-white dark:bg-overlayDarkHover dark:text-neutral-100 dark:hover:bg-neutral-950"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <svg className="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                   </svg>
                 </button>
